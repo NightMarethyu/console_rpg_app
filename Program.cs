@@ -1,4 +1,5 @@
-﻿Location curLoc;
+﻿Player player = new Player();
+Enemy enemy = new Enemy();
 
 var loc0 = new Location(0);
 var loc1 = new Location(1);
@@ -21,11 +22,12 @@ loc6.AddLocation(loc7);
 loc2.setTeleport(loc8);
 loc8.setTeleport(loc2);
 
-curLoc = loc4;
+player.SetLocation(loc4);
+enemy.SetLocation(loc7);
 
 while (true)
 {
-    curLoc.describe();
+    player.CurrentLocation.Describe();
     Console.Write("Which location do you want to travel to? ");
     String? input = Console.ReadLine();
 
@@ -34,5 +36,5 @@ while (true)
         continue;
     }
 
-    curLoc = curLoc.getNextLocation(input);
+    player.SetLocation(player.CurrentLocation.getNextLocation(input));
 }

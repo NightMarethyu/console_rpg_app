@@ -10,9 +10,9 @@
         this.teleport = teleport;
     }
 
-    public override void describe()
+    public override void Describe()
     {
-        base.describe();
+        base.Describe();
         Console.WriteLine("This room is interactive. To teleport type 'i'");
     }
 
