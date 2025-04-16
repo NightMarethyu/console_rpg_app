@@ -3,34 +3,24 @@ using System.ComponentModel.Design;
 
 public class Parser
 {
-	private string Command;
-	private List<Command> Commands;
-
-	public Parser(string com)
+	public Parser()
 	{
-		this.Command = com;
 	}
 
-	public void AddCommand(Command com)
-    {
-        if (com != null)
-            Commands.Add(com);
-        else
-            throw new ArgumentException("Command cannot be null");
-    }
-
-    public void Parse(string com)
+    public void Parse(Player player, Location location, string com)
 	{
-        com.ToLower();
-		string[] coms = Command.Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+		string[] coms = com.ToLower().Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
 		if (coms.Length == 0)
-			throw new ArgumentException(Command);
+			throw new ArgumentException(com);
 
-		foreach (Command com in Commands)
+        Console.WriteLine("\nParsing command: " + com);
+
+		foreach (Command command in CommandManager.Commands)
         {
-            if (com.Name == coms[0])
+            Console.WriteLine("Comparing: " + command.Name + " " + coms[0]);
+            if (command.Name == coms[0])
             {
-                com.Execute(coms);
+                command.Execute(player, location, coms);
                 return;
             }
         }

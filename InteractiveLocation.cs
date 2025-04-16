@@ -16,9 +16,9 @@
         Console.WriteLine("This room is interactive. To teleport type 'i'");
     }
 
-    public override Location getNextLocation(string command)
+    public override Location GetNextLocation(string command)
     {
-        var r = base.getNextLocation(command);
+        var r = base.GetNextLocation(command);
         if (string.Compare(command, "i") == 0)
         {
             if (teleport != null)

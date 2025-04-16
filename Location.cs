@@ -46,7 +46,7 @@
         
     }
 
-    public virtual Location getNextLocation(string command)
+    public virtual Location GetNextLocation(string command)
     {
         Location cur = this;
         foreach (Location location in connected)
@@ -58,4 +58,6 @@
         }
         return cur;
     }
+
+    public bool HasConnected() { return connected.Count > 0; }
 }

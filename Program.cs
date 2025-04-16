@@ -1,5 +1,7 @@
 ﻿Player player = new Player();
 Enemy enemy = new Enemy();
+Parser parser = new Parser();
+CommandManager.Initialize();
 
 var loc0 = new Location(0);
 var loc1 = new Location(1);
@@ -36,5 +38,5 @@ while (true)
         continue;
     }
 
-    player.SetLocation(player.CurrentLocation.getNextLocation(input));
+    parser.Parse(player, player.CurrentLocation, input);
 }

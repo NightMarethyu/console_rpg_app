@@ -2,13 +2,8 @@
 
 public abstract class Command
 {
-	public string Name;
-	public string Description;
-
-
-	public Command()
-	{
-	}
-
-	public abstract void Execute(string[] args);
+	public abstract string Name { get; }
+	public abstract string Description { get; }
+	public abstract bool IsValid(Player player, Location location);
+	public abstract void Execute(Player player, Location location, string[] args);
 }
