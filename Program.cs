@@ -26,11 +26,10 @@ loc8.setTeleport(loc2);
 
 player.SetLocation(loc4);
 enemy.SetLocation(loc7);
+parser.Parse(player, loc4, "help");
 
 while (true)
 {
-    player.CurrentLocation.Describe();
-    Console.Write("Which location do you want to travel to? ");
     String? input = Console.ReadLine();
 
     if (input == null)

@@ -9,14 +9,15 @@ public class Enemy : Character
 		this.AttackVal = 5;
 	}
 
-	/*public Enemy(string name) : this()
+	public Enemy(string name, int HP, int AttackVal)
 	{
 		this.Name = name;
+		this.HP = HP;
+		this.AttackVal = AttackVal;
 	}
 
-	public Enemy(int hp) : this()
-	{
-		this.HP = hp;
-	}
-*/
+	/*public override bool Equals(object? obj)
+    {
+		return obj.ToString() == this.Name;
+    }*/
 }

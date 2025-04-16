@@ -13,6 +13,8 @@
         Console.WriteLine("Available commands:");
         foreach (var command in CommandManager.Commands)
         {
+            if (!command.IsValid(player, location)) continue;
+
             Console.WriteLine($"- {command.Name}: {command.Description}");
         }
     }

@@ -60,4 +60,21 @@
     }
 
     public bool HasConnected() { return connected.Count > 0; }
+    public bool HasEnemies() { return characters.Count >= 2; }
+
+    public bool EnemyExists(string name)
+    {
+        return (characters.Any(character => character.Name.ToLower() == name));
+    }
+
+    public Enemy? FindFirstEnemy(string name)
+    {
+        foreach (Character enemy in characters)
+        {
+            if (enemy is Enemy && enemy.Name.ToLower() == name)
+                return (Enemy)enemy;
+        }
+        Console.WriteLine("Enemy with name " + name + " not found in current location");
+        return null;
+    }
 }
