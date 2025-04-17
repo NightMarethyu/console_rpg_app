@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Character
+public abstract class Character
 {
     public string Name { get; protected set; }
     public int HP { get; protected set; }
@@ -15,7 +15,14 @@ public class Character
         this.AttackVal = 0;
 	}
 
-    public void TakeDamage(int damage) { this.HP -= damage; }
+    public void TakeDamage(int damage)
+    { 
+        this.HP -= damage;
+        if (this.HP <= 0)
+        {
+            this.Death();
+        }
+    }
 
     public virtual void SetLocation(Location location)
     {
@@ -35,4 +42,6 @@ public class Character
     {
         return this.Name;
     }
+
+    public abstract void Death();
 }

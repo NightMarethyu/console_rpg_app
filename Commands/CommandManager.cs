@@ -14,5 +14,6 @@
         Commands.Add(new AttackCommand());
         //Commands.Add(new FleeCommand());
         Commands.Add(new QuitCommand());
+        Commands.Add(new TeleportCommand());
     }
 }

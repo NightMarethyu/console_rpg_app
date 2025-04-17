@@ -1,7 +1,8 @@
 ﻿public class AttackCommand : Command
 {
     public override string Name => "attack";
-    public override string Description => "\"attack {enemy name}\" | Hit the enemy with an attack";
+    public override string Description => "Hit the enemy with an attack";
+    public override string Usage => "attack {enemy name}";
 
     public override bool IsValid(Player player, Location location)
     {

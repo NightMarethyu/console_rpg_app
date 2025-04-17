@@ -1,7 +1,8 @@
 ﻿public class QuitCommand : Command
 {
     public override string Name => "quit";
-    public override string Description => "\"quit\" | Close the game";
+    public override string Description => "Close the game";
+    public override string Usage => "quit";
 
     public override bool IsValid(Player player, Location location)
     {

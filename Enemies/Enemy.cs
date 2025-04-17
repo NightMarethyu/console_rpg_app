@@ -16,6 +16,11 @@ public class Enemy : Character
 		this.AttackVal = AttackVal;
 	}
 
+	public override void Death()
+	{
+		this.CurrentLocation?.RemoveCharacter(this);
+    }
+
 	/*public override bool Equals(object? obj)
     {
 		return obj.ToString() == this.Name;

@@ -43,7 +43,7 @@
                 Console.WriteLine(character.Describe());
             }
         }
-        
+        Console.WriteLine();
     }
 
     public virtual Location GetNextLocation(string command)
@@ -60,7 +60,7 @@
     }
 
     public bool HasConnected() { return connected.Count > 0; }
-    public bool HasEnemies() { return characters.Count >= 2; }
+    public bool HasEnemies() { return characters.Count >= 1; }
 
     public bool EnemyExists(string name)
     {
@@ -76,5 +76,10 @@
         }
         Console.WriteLine("Enemy with name " + name + " not found in current location");
         return null;
+    }
+
+    public void RemoveCharacter(Character character)
+    {
+        characters.Remove(character);
     }
 }

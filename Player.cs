@@ -26,4 +26,12 @@ public class Player : Character
             throw new ArgumentException("Location not found!");
         }
     }
+
+    public override void Death()
+    {
+        Console.WriteLine("You have died.");
+        Console.WriteLine("Game Over.");
+        Thread.Sleep(2000);
+        Environment.Exit(0);
+    }
 }
