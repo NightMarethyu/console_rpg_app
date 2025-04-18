@@ -1,4 +1,6 @@
-﻿public enum ItemType
+﻿using System.Security.Cryptography.X509Certificates;
+
+public enum ItemType
 {
     Weapon,
     Armor,
@@ -18,7 +20,9 @@ public abstract class Item
     public int? Value { get; protected set; }
     public int? NumUses { get; protected set; }
     public ItemType Type { get; protected set; }
-    public bool IsTakeable { get; protected set; } = true;
+    public bool IsTakeable { get; set; } = true;
+    public int Quantity { get; set; } = 1;
+    public bool IsStackable { get; set; } = false;
 
     public Item()
     {
@@ -53,19 +57,32 @@ public abstract class Item
         NumUses = numUses;
     }
 
+    public abstract Item Clone(int quantity);
+
     public virtual string Describe()
     {
-        if (Effects != null)
-        {
-            return $"{Name}: {Description} (Value: {Value}, Effects: {Effects})";
-        }
-        else if (Value != null)
-        {
-            return $"{Name}: {Description} (Value: {Value})";
-        }
-        else
-        {
-            return $"{Name}: {Description}";
-        }
+        var parts = new List<string>();
+
+        string prefix = IsStackable && Quantity > 1 ? $"{Name} x{Quantity}" : Name;
+
+        parts.Add($"{prefix}: {Description}");
+
+        if (Value != null)
+            parts.Add($"Value: {Value}");
+
+        if (!string.IsNullOrEmpty(Effects))
+            parts.Add($"Effects: {Effects}");
+
+        return string.Join(" | ", parts);
+    }
+
+    public Item SplitStack(int amount)
+    {
+        if (!IsStackable || Quantity < amount)
+            throw new InvalidOperationException("Cannot Split Stack");
+
+        Quantity -= amount;
+        var clone = Clone(amount);
+        return clone;
     }
 }

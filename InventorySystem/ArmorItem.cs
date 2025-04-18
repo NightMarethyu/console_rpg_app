@@ -15,4 +15,13 @@
     {
         DefenseValue = defenseValue;
     }
+
+    public override Item Clone(int quantity)
+    {
+        Item item = new ArmorItem(ID, Name, Description, DefenseValue);
+        item.Quantity = quantity;
+        item.IsTakeable = IsTakeable;
+        item.IsStackable = IsStackable;
+        return item;
+    }
 }

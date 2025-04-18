@@ -85,4 +85,10 @@ public class ContainerItem : Item
                 return baseDesc;
         }
     }
+
+    public override Item Clone(int quantity)
+    {
+        Item item = new ContainerItem(ID, Name, Description);
+        return item;
+    }
 }

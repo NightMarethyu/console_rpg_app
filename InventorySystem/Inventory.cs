@@ -3,7 +3,7 @@
 public class Inventory
 {
     private List<Item> items;
-    private int? MaxSize;
+    public int? MaxSize { private get; set; }
     private Character? Owner;
 
     public Inventory()
@@ -32,6 +32,16 @@ public class Inventory
 
     public void AddItem(Item item)
     {
+        if (item.IsStackable)
+        {
+            var existing = items.FirstOrDefault(i => i.ID == item.ID && i.IsStackable);
+            if (existing != null)
+            {
+                existing.Quantity += item.Quantity;
+                return;
+            }
+        }
+
         if (MaxSize == null || items.Count < MaxSize)
             items.Add(item);
         else
@@ -100,4 +110,6 @@ public class Inventory
             items.Add(item);
         }
     }
+
+    public bool IsNotEmpty() => items.Count > 0;
 }

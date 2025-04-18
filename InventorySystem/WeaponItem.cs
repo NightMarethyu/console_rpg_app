@@ -10,4 +10,19 @@
         Type = ItemType.Weapon;
         AttackValue = 10;
     }
+
+    public WeaponItem(string id, string name, string description, int value, int attackValue)
+    {
+        ID = id;
+        Name = name;
+        Description = description;
+        Value = value;
+        AttackValue = attackValue;
+        Type = ItemType.Weapon;
+    }
+
+    public override Item Clone(int q)
+    {
+        return new WeaponItem() { Quantity = q };
+    }
 }
