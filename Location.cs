@@ -52,7 +52,23 @@
         if (Inventory != null)
         {
             Console.WriteLine("This area contains the following items:");
-            Inventory.ListItems();
+            foreach (var item in Inventory.GetAllItems())
+            {
+                if (item is ContainerItem container)
+                {
+                    Console.WriteLine($"- {container.Describe()}");
+                    
+                    if (container.IsOpen)
+                    {
+                        Console.WriteLine($"Contains:");
+                        container.Inventory.ListItems();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"- {item.Describe()}");
+                }
+            }
         }
         Console.WriteLine();
     }

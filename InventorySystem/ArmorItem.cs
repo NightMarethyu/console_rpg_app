@@ -6,7 +6,7 @@
     {
         ID = "shield";
         Name = "Shield";
-        Description = "A round wooden shield reinforced with iron bands, its surface marred by battle scars";
+        Description = "A round wooden shield reinforced with iron bands";
         Type = ItemType.Armor;
         DefenseValue = 10;
     }

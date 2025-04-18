@@ -80,4 +80,16 @@ public class Inventory
             Console.WriteLine("- " + item.Describe());
         }
     }
+
+    public bool HasItemType(ItemType type)
+    {
+        foreach (Item item in items)
+        {
+            if (item.Type == type)
+                return true;
+        }
+        return false;
+    }
+
+    public List<Item> GetAllItems() => new List<Item>(items);
 }

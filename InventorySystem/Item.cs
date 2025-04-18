@@ -58,6 +58,13 @@ public abstract class Item
         {
             return $"{Name}: {Description} (Value: {Value}, Effects: {Effects})";
         }
-        return $"{Name}: {Description} (Value: {Value})";
+        else if (Value != null)
+        {
+            return $"{Name}: {Description} (Value: {Value})";
+        }
+        else
+        {
+            return $"{Name}: {Description}";
+        }
     }
 }
