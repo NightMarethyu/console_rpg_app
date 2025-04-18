@@ -27,7 +27,7 @@ loc6.AddLocation(loc7);
 loc2.SetTeleport(loc8);
 loc8.SetTeleport(loc2);
 
-loc8.AddInventory(new Inventory());
+loc8.AddInventory();
 loc8.Inventory.AddItem(new ContainerItem());
 Item loc8Chest = loc8.Inventory.GetItem("chest");
 

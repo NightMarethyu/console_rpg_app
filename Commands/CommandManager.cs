@@ -8,7 +8,7 @@
         Commands.Add(new LookCommand());
         Commands.Add(new OpenCommand());
         //Commands.Add(new InventoryCommand());
-        //Commands.Add(new TakeCommand());
+        Commands.Add(new TakeCommand());
         //Commands.Add(new DropCommand());
         //Commands.Add(new UseCommand());
         //Commands.Add(new TalkCommand());

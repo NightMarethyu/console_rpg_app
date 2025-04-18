@@ -18,6 +18,7 @@ public abstract class Item
     public int? Value { get; protected set; }
     public int? NumUses { get; protected set; }
     public ItemType Type { get; protected set; }
+    public bool IsTakeable { get; protected set; } = true;
 
     public Item()
     {

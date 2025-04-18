@@ -18,6 +18,9 @@ public class Enemy : Character
 
 	public override void Death()
 	{
+		if (this.CurrentLocation.Inventory == null)
+			this.CurrentLocation.AddInventory();
+		this.CurrentLocation.Inventory.Combine(this.Inventory);
 		this.CurrentLocation?.RemoveCharacter(this);
     }
 

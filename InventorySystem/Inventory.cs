@@ -63,7 +63,7 @@ public class Inventory
             if (item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))
                 return item;
         }
-        Console.WriteLine("Item not found in inventory!");
+        //Console.WriteLine("Item not found in inventory!");
         return null;
     }
 
@@ -92,4 +92,12 @@ public class Inventory
     }
 
     public List<Item> GetAllItems() => new List<Item>(items);
+
+    public void Combine(Inventory inventory)
+    {
+        foreach (Item item in inventory.items)
+        {
+            items.Add(item);
+        }
+    }
 }

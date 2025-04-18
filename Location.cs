@@ -25,9 +25,9 @@
         characters.Add(character);
     }
 
-    public void AddInventory(Inventory inventory)
+    public void AddInventory()
     {
-        Inventory = inventory;
+        Inventory = new Inventory();
     }
 
     public virtual void Describe()
