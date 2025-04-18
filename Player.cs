@@ -4,7 +4,7 @@ public class Player : Character
 {
 	
 
-	public Player()
+	public Player() : base()
 	{
 		this.Name = "Player Character";
 		this.HP = 100;
@@ -18,13 +18,9 @@ public class Player : Character
     override public void SetLocation(Location location)
     {
         if (location != null)
-        {
             this.CurrentLocation = location;
-        }
         else
-        {
             throw new ArgumentException("Location not found!");
-        }
     }
 
     public override void Death()

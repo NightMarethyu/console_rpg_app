@@ -8,11 +8,14 @@ public abstract class Character
 
     public Location? CurrentLocation { get; set; }
 
+    public Inventory Inventory { get; protected set; }
+
     public Character()
 	{
         this.Name = "Empty Character";
         this.HP = 0;
         this.AttackVal = 0;
+        this.Inventory = new Inventory(this);
 	}
 
     public void TakeDamage(int damage)

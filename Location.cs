@@ -4,6 +4,7 @@
     private int id;
     private List<Location> connected;
     private List<Character> characters;
+    public Inventory? Inventory { get; private set; }
 
     public Location(int id)
     {
@@ -24,6 +25,11 @@
         characters.Add(character);
     }
 
+    public void AddInventory(Inventory inventory)
+    {
+        Inventory = inventory;
+    }
+
     public virtual void Describe()
     {
         Console.WriteLine("You are currently at location " + name);
@@ -42,6 +48,11 @@
             {
                 Console.WriteLine(character.Describe());
             }
+        }
+        if (Inventory != null)
+        {
+            Console.WriteLine("This area contains the following items:");
+            Inventory.ListItems();
         }
         Console.WriteLine();
     }

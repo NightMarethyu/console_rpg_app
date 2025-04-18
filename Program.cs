@@ -4,6 +4,7 @@ Parser parser = new Parser();
 CommandManager.Initialize();
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
+//Console.WriteLine("Testing emoji: ⚡✨🧙‍♂️🗡️🚪");
 
 var loc0 = new Location(0);
 var loc1 = new Location(1);
@@ -25,6 +26,16 @@ loc6.AddLocation(loc7);
 
 loc2.SetTeleport(loc8);
 loc8.SetTeleport(loc2);
+
+loc8.AddInventory(new Inventory());
+loc8.Inventory.AddItem(new ContainerItem());
+Item loc8Chest = loc8.Inventory.GetItem("chest");
+
+if (loc8Chest is ContainerItem chest)
+{
+    chest.Inventory.AddItem(new WeaponItem());
+    chest.Inventory.AddItem(new ArmorItem());
+}
 
 player.SetLocation(loc4);
 enemy.SetLocation(loc7);
