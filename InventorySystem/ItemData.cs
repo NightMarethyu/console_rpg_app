@@ -14,5 +14,4 @@
     public int? DefenseValue { get; set; } // ArmorItem specific
     public bool IsEquipable { get; set; } = false;
     public int? MaxSize { get; set; }
-
 }

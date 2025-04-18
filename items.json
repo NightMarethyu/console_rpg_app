@@ -1,3 +1,29 @@
-{
-
-}
+[
+  {
+    "id": "sword",
+    "name": "Sword",
+    "description": "A plain steel sword with a worn leather-wrapped hilt",
+    "type": "Weapon",
+    "value": 10,
+    "isTakeable": true,
+    "isStackable": false,
+    "attackValue": 10
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "description": "A round wooden shield reinforced with iron bands",
+    "type": "Armor",
+    "value": 10,
+    "isTakeable": true,
+    "isStackable": false,
+    "defenseValue": 10
+  },
+  {
+    "id": "chest",
+    "name": "Chest",
+    "description": "A weathered wooden chest bound in iron, its surface scarred by time and battle",
+    "type": "Container",
+    "isTakeable": false
+  }
+]

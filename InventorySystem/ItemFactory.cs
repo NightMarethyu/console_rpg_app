@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public static class ItemFactory
 {
@@ -8,7 +9,11 @@ public static class ItemFactory
     public static void LoadItemsFromJSON(string filepath)
     {
         var json = File.ReadAllText(filepath);
-        var items = JsonSerializer.Deserialize<List<ItemData>>(json);
+        var items = JsonSerializer.Deserialize<List<ItemData>>(json, new JsonSerializerOptions 
+        { 
+            PropertyNameCaseInsensitive = true,
+            Converters = { new JsonStringEnumConverter() }
+        });
 
         if (items == null) return;
 

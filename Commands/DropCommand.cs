@@ -37,7 +37,9 @@
                     }
                     
                 }
-            } else {
+            } 
+            else 
+            {
                 player.Inventory.RemoveItem(item);
                 location.Inventory?.AddItem(item);
                 Console.WriteLine("You dropped " + item.Name);

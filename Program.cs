@@ -2,6 +2,7 @@
 Enemy enemy = new Enemy();
 Parser parser = new Parser();
 CommandManager.Initialize();
+ItemFactory.LoadItemsFromJSON("items.json");
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 //Console.WriteLine("Testing emoji: ⚡✨🧙‍♂️🗡️🚪");
@@ -28,13 +29,13 @@ loc2.SetTeleport(loc8);
 loc8.SetTeleport(loc2);
 
 loc8.AddInventory();
-loc8.Inventory.AddItem(new ContainerItem());
+loc8.Inventory.AddItem(ItemFactory.Create("chest", 1));
 Item loc8Chest = loc8.Inventory.GetItem("chest");
 
 if (loc8Chest is ContainerItem chest)
 {
-    chest.Inventory.AddItem(new WeaponItem());
-    chest.Inventory.AddItem(new ArmorItem());
+    chest.Inventory.AddItem(ItemFactory.Create("sword", 1));
+    chest.Inventory.AddItem(ItemFactory.Create("shield", 1));
 }
 
 player.SetLocation(loc4);

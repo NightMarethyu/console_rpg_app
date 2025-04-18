@@ -3,16 +3,56 @@
   "WorkspaceRootPath": "C:\\CodeBase\\console_rpg_app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\commands\\takecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\takecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\itemfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\items.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:items.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\containeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\containeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\armoritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\armoritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\commands\\dropcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\dropcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\basicitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\basicitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\commands\\commandmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\commandmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\commands\\takecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\takecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +63,8 @@
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\armoritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\armoritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\inventorysystem\\containeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\containeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\commands\\opencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,11 +121,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "items.json",
+              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\items.json",
+              "RelativeDocumentMoniker": "items.json",
+              "ToolTip": "C:\\CodeBase\\console_rpg_app\\items.json",
+              "RelativeToolTip": "items.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-18T05:01:24.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BasicItem.cs",
+              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\BasicItem.cs",
+              "RelativeDocumentMoniker": "InventorySystem\\BasicItem.cs",
+              "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\BasicItem.cs",
+              "RelativeToolTip": "InventorySystem\\BasicItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:55:16.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemFactory.cs",
+              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ItemFactory.cs",
+              "RelativeDocumentMoniker": "InventorySystem\\ItemFactory.cs",
+              "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ItemFactory.cs",
+              "RelativeToolTip": "InventorySystem\\ItemFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:36:52.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ItemData.cs",
+              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ItemData.cs",
+              "RelativeDocumentMoniker": "InventorySystem\\ItemData.cs",
+              "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ItemData.cs",
+              "RelativeToolTip": "InventorySystem\\ItemData.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA0wA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T04:31:48.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WeaponItem.cs",
+              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\WeaponItem.cs",
+              "RelativeDocumentMoniker": "InventorySystem\\WeaponItem.cs",
+              "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\WeaponItem.cs",
+              "RelativeToolTip": "InventorySystem\\WeaponItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T03:54:28.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DropCommand.cs",
+              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\DropCommand.cs",
+              "RelativeDocumentMoniker": "Commands\\DropCommand.cs",
+              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Commands\\DropCommand.cs",
+              "RelativeToolTip": "Commands\\DropCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T03:24:08.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Enemies\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemies\\Enemy.cs",
@@ -114,72 +216,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "TakeCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\TakeCommand.cs",
               "RelativeDocumentMoniker": "Commands\\TakeCommand.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\Commands\\TakeCommand.cs",
               "RelativeToolTip": "Commands\\TakeCommand.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCUAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwCUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T02:22:40.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Item.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\Item.cs",
               "RelativeDocumentMoniker": "InventorySystem\\Item.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\Item.cs",
               "RelativeToolTip": "InventorySystem\\Item.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBQAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T02:18:44.139Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ArmorItem.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ArmorItem.cs",
               "RelativeDocumentMoniker": "InventorySystem\\ArmorItem.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ArmorItem.cs",
               "RelativeToolTip": "InventorySystem\\ArmorItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T02:18:32.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "ContainerItem.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ContainerItem.cs",
               "RelativeDocumentMoniker": "InventorySystem\\ContainerItem.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\ContainerItem.cs",
               "RelativeToolTip": "InventorySystem\\ContainerItem.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAA0wDgAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T01:57:16.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Inventory.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\Inventory.cs",
               "RelativeDocumentMoniker": "InventorySystem\\Inventory.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\InventorySystem\\Inventory.cs",
               "RelativeToolTip": "InventorySystem\\Inventory.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAIwGMAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T01:42:38.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "OpenCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\OpenCommand.cs",
               "RelativeDocumentMoniker": "Commands\\OpenCommand.cs",
@@ -192,20 +294,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "CommandManager.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\CommandManager.cs",
               "RelativeDocumentMoniker": "Commands\\CommandManager.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\Commands\\CommandManager.cs",
               "RelativeToolTip": "Commands\\CommandManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA8wAoAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA8wAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T20:07:28.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "TeleportCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\TeleportCommand.cs",
               "RelativeDocumentMoniker": "Commands\\TeleportCommand.cs",
@@ -218,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "HelpCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\HelpCommand.cs",
               "RelativeDocumentMoniker": "Commands\\HelpCommand.cs",
@@ -230,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "Character.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Character.cs",
               "RelativeDocumentMoniker": "Character.cs",
@@ -243,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "AttackCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\AttackCommand.cs",
               "RelativeDocumentMoniker": "Commands\\AttackCommand.cs",
@@ -255,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "Command.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\Command.cs",
               "RelativeDocumentMoniker": "Commands\\Command.cs",
@@ -267,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "Location.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Location.cs",
               "RelativeDocumentMoniker": "Location.cs",
@@ -280,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
@@ -292,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Enemy.cs",
               "RelativeDocumentMoniker": "..\\..\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Enemy.cs",
@@ -304,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "TeleportLocation.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\TeleportLocation.cs",
               "RelativeDocumentMoniker": "TeleportLocation.cs",
@@ -316,20 +418,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\CodeBase\\console_rpg_app\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAswDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T20:07:10.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "LookCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\LookCommand.cs",
               "RelativeDocumentMoniker": "Commands\\LookCommand.cs",
@@ -341,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "Parser.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Parser.cs",
               "RelativeDocumentMoniker": "Parser.cs",
@@ -353,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "QuitCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\QuitCommand.cs",
               "RelativeDocumentMoniker": "Commands\\QuitCommand.cs",
@@ -365,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "MoveCommand.cs",
               "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Commands\\MoveCommand.cs",
               "RelativeDocumentMoniker": "Commands\\MoveCommand.cs",
