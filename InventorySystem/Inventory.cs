@@ -84,7 +84,7 @@ public class Inventory
             Console.WriteLine("Inventory is empty.");
             return;
         }
-        Console.WriteLine("Items in inventory:");
+
         foreach (Item item in items)
         {
             Console.WriteLine("- " + item.Describe());

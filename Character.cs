@@ -6,6 +6,10 @@ public abstract class Character
     public int HP { get; protected set; }
     public int AttackVal { get; protected set; }
 
+    public int Strength { get; protected set; } 
+    public int Dexterity { get; protected set; }
+    public int Wisdom { get; protected set; }
+
     public Location? CurrentLocation { get; set; }
 
     public Inventory Inventory { get; protected set; }
@@ -16,6 +20,9 @@ public abstract class Character
         this.HP = 0;
         this.AttackVal = 0;
         this.Inventory = new Inventory(this);
+        this.Strength = Dice.D(6, 3);
+        this.Dexterity = Dice.D(6, 3);
+        this.Wisdom = Dice.D(6, 3);
 	}
 
     public void TakeDamage(int damage)

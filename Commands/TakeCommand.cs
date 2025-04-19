@@ -41,6 +41,6 @@
 
     public override bool IsValid(Player player, Location location)
     {
-        return location.Inventory != null && location.Inventory.GetAllItems().Any(item => item.IsTakeable);
+        return location.Inventory != null && ( location.Inventory.GetAllItems().Any(item => item.IsTakeable) || location.Inventory.HasItemType(ItemType.Container));
     }
 }

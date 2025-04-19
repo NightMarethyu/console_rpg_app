@@ -40,10 +40,13 @@ if (loc8Chest is ContainerItem chest)
 
 player.SetLocation(loc4);
 enemy.SetLocation(loc7);
-parser.Parse(player, loc4, "help");
+
 loc4.Describe();
 
-while (true)
+SceneManager.SetScene(new ExploreScene(player, parser));
+SceneManager.RunCurrentScene();
+
+/*while (true)
 {
     Console.Write("> ");
     String? input = Console.ReadLine();
@@ -55,3 +58,4 @@ while (true)
 
     parser.Parse(player, player.CurrentLocation, input);
 }
+*/

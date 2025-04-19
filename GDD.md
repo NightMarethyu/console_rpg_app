@@ -6,7 +6,7 @@
 - **Platform:** PC Terminal
 - **Target Audience:** Old-School RPG fans
 - **Game Summary:**
-  > A short paragraph describing the core premise and gameplay appeal.
+  > This game is a call-back to old-school adventure games player entirely in the terminal. You are the heroic adventurer off on a quest to save the realm. Explore the world, fight monsters, collect treasure. Inspired by TTRPGS like Dungeons & Dragons.
 
 ---
 
@@ -74,6 +74,7 @@
 ### Parser System (if applicable)
 - Programmed commands
 - always available help function (with context specific actions, ie. attack only available when the player has something to attack)
+- Planned arrow key interaction to allow the player to scroll through the commands and select one with the enter key
 
 ### Save/Load System
 - Plan on both auto-save and manual
@@ -89,6 +90,9 @@
 - Maybe ASCII Art
 - Maybe add color
 
+### Music & SFX
+- Plan on using the Windows terminal capability of playing WAV files to add some music
+- Add Sound Effects (again using WAV files) for increased immersive experience
 
 ---
 
