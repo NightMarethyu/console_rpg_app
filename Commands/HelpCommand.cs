@@ -1,10 +1,10 @@
 ﻿public class HelpCommand : Command
 {
     public override string Name => "help";
-    public override string Description => "Displays a list of available commands.";
-    public override string Usage => "help";
+    public override string Description => GameStrings.Commands.Help;
+    public override string Usage => GameStrings.Commands.HelpUsage;
     public override CommandType Type => CommandType.Help;
-    public override List<string> Aliases => new List<string> { "help", "?", "info", "commands", "h" };
+    public override List<string> Aliases => GameStrings.Commands.HelpAliases;
 
 
     public override bool IsValid(Player player, Location location)
@@ -14,6 +14,7 @@
 
     public override void Execute(Player player, Location location, string[] args)
     {
+        base.Execute(player, location, args);
         Console.WriteLine("Available commands:\n");
 
         var validCommands = CommandManager.Commands
@@ -32,6 +33,11 @@
             Console.Write("  > Usage       : ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(command.Usage);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("  > Aliases     : ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            foreach (string alias in command.Aliases) { Console.Write(alias + ", "); }
+            Console.WriteLine();
 
             // Description
             Console.ForegroundColor = ConsoleColor.Gray;

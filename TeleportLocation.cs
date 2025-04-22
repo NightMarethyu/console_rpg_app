@@ -13,7 +13,7 @@
     public override void Describe()
     {
         base.Describe();
-        Console.WriteLine("This room has a teleporter! To teleport type 'teleport'");
+        Console.WriteLine(GameStrings.Teleport.TeleporterExists);
     }
 
     public override Location GetNextLocation(string command)
@@ -33,7 +33,7 @@
     {
         if (teleport == null)
         {
-            throw new InvalidOperationException("Teleport is not set.");
+            throw new InvalidOperationException(GameStrings.ErrorMsgs.TeleportUnset);
         }
         return teleport;
     }

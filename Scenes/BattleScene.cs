@@ -21,11 +21,11 @@ public class BattleScene : Scene
     {
         battleLog = new List<string>();
         // Display Battle Menu
-        Console.WriteLine("\n-- What will you do? --");
-        Console.WriteLine("1. Attack");
-        //Console.WriteLine("2. Defend");
-        //Console.WriteLine("3. Use Item");
-        //Console.WriteLine("4. Flee");
+        Console.WriteLine(GameStrings.Battle.WhatWillYouDo);
+        Console.WriteLine(GameStrings.Battle.AttackOption);
+        //Console.WriteLine(GameStrings.Battle.DefendOption);
+        //Console.WriteLine(GameStrings.Battle.UseItemOption);
+        //Console.WriteLine(GameStrings.Battle.FleeOption);
         var key = Console.ReadKey();
         Console.WriteLine("\n");
 
@@ -52,16 +52,16 @@ public class BattleScene : Scene
             case ConsoleKey.D4:
                 break;*/
             default:
-                Console.WriteLine("Invalid command\n");
+                Console.WriteLine(GameStrings.General.InvalidCommand);
                 break;
         }
 
         foreach (string log in battleLog) Console.WriteLine(log);
-        Console.WriteLine("\n--- End of Turn ---\n");
+        Console.WriteLine(GameStrings.Battle.EndOfTurn);
 
         if (!enemy.IsAlive)
         {
-            Console.WriteLine("You have killed " + enemy.Name);
+            Console.WriteLine(GameStrings.Battle.EnemyKilled, enemy.Name);
             IsRunning = false;
             PreviousScene.IsRunning = true;
             SceneManager.SetScene(PreviousScene);
@@ -111,7 +111,8 @@ public class BattleScene : Scene
             case CombatAction.Attack:
                 int attackDmg = player.AttackVal + Dice.D6();
                 enemy.TakeDamage(attackDmg);
-                battleLog.Add($"You attack the enemy for {attackDmg} damage");
+                string temp = string.Format(GameStrings.Battle.YouAttack, attackDmg);
+                battleLog.Add(temp);
                 break;
             case CombatAction.Defend: break;
             case CombatAction.Flee: break;
@@ -123,6 +124,7 @@ public class BattleScene : Scene
     {
         int attackDmg = enemy.AttackVal + Dice.D6();
         player.TakeDamage(attackDmg);
-        battleLog.Add($"You take {attackDmg} damage from the enemy attack");
+        string temp = string.Format(GameStrings.Battle.EnemyAttack, attackDmg);
+        battleLog.Add(temp);
     }
 }

@@ -104,7 +104,7 @@
             if (enemy is Enemy && enemy.Name.ToLower() == name)
                 return (Enemy)enemy;
         }
-        Console.WriteLine("Enemy with name " + name + " not found in current location");
+        Console.WriteLine(GameStrings.LocationMsgs.EnemyNotFound, name);
         return null;
     }
 

@@ -3,11 +3,11 @@
 public class AttackCommand : Command
 {
     public override string Name => "attack";
-    public override string Description => "Hit the enemy with an attack";
-    public override string Usage => "attack {enemy name}";
+    public override string Description => GameStrings.Commands.Attack;
+    public override string Usage => GameStrings.Commands.AttackUsage;
     public override CommandType Type => CommandType.Attack;
 
-    public override List<string> Aliases => new List<string> { "attack", "hit", "strike", "fight", "a", "atk" };
+    public override List<string> Aliases => GameStrings.Commands.AttackAliases;
 
     public override bool IsValid(Player player, Location location)
     {
@@ -16,6 +16,7 @@ public class AttackCommand : Command
 
     public override void Execute(Player player, Location location, string[] args)
     {
+        base.Execute(player, location, args);
         if (location.HasEnemies()) {
             SceneManager.SetScene(new BattleScene(player, SceneManager.currentScene, location.FindFirstEnemy(args[1])));
         } else

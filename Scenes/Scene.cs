@@ -15,12 +15,12 @@
 
     public virtual void Enter()
     {
-        Console.WriteLine("Entering scene...");
+        Console.WriteLine(GameStrings.SceneMsgs.EnterScene);
     }
 
     public virtual void Exit()
     {
-        Console.WriteLine("Exiting scene...");
+        Console.WriteLine(GameStrings.SceneMsgs.ExitScene);
         IsRunning = false;
     }
 }

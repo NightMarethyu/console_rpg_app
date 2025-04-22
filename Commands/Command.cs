@@ -22,5 +22,8 @@ public abstract class Command
 	public abstract string Usage { get; }
 	public abstract CommandType Type { get; }
 	public abstract bool IsValid(Player player, Location location);
-	public abstract void Execute(Player player, Location location, string[] args);
+	public virtual void Execute(Player player, Location location, string[] args)
+	{
+		if (!IsValid(player, location)) return;
+	}
 }

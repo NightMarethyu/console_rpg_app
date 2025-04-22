@@ -2,15 +2,16 @@
 {
     public override string Name => "take";
 
-    public override string Description => "Add an item to your inventory";
+    public override string Description => GameStrings.Commands.Take;
 
-    public override string Usage => "take {item name}";
+    public override string Usage => GameStrings.Commands.TakeUsage;
     public override CommandType Type => CommandType.Take;
-    public override List<string> Aliases => new List<string> { "take", "get", "grab", "pick", "collect", "t" };
+    public override List<string> Aliases => GameStrings.Commands.TakeAliases;
 
 
     public override void Execute(Player player, Location location, string[] args)
     {
+        base.Execute(player, location, args);
         string itemName = args[1];
 
         Item? foundItem = location.Inventory?.GetItem(itemName);

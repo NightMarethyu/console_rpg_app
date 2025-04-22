@@ -23,7 +23,7 @@
         } 
         else
         {
-            Console.WriteLine("No active scene");
+            Console.WriteLine(GameStrings.ErrorMsgs.NoScene);
         }
     }
 }

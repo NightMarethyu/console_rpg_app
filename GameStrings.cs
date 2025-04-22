@@ -28,9 +28,20 @@
         public const string AttackUsage = "attack {enemy name}";
         public const string QuitUsage = "quit";
         public const string TeleportUsage = "teleport";
+        public const string HelpUsage = "help";
+
+        public static readonly List<string> AttackAliases = ["attack", "hit", "strike", "fight", "a", "atk"];
+        public static readonly List<string> HelpAliases = ["help", "?", "info", "commands", "h"];
+        public static readonly List<string> DropAliases = ["drop", "discard", "throw", "remove", "leave", "d"];
+        public static readonly List<string> LookAliases = ["look", "examine", "inspect", "l", "view", "observe"];
+        public static readonly List<string> MoveAliases = ["move", "go", "walk", "travel", "m", "run"];
+        public static readonly List<string> OpenAliases = ["open", "o"];
+        public static readonly List<string> QuitAliases = ["quit", "exit", "leave", "q", "bye"];
+        public static readonly List<string> TakeAliases = ["take", "get", "grab", "pick", "collect", "t"];
+        public static readonly List<string> TeleportAliases = ["teleport", "tp", "warp", "blink", "fasttravel", "portal"];
     }
 
-    public static class UI
+    public static class Inventory
     {
         public const string ItemNotFound = "Item not found in inventory!";
         public const string NotEnoughQuantity = "You can't drop that many, not enough in your inventory";
@@ -39,12 +50,30 @@
         public const string YouDroppedItem = "You dropped {0}";
         public const string CannotTakeItem = "Can't take {0}";
         public const string InventoryEmpty = "Inventory is empty.";
+        public const string InventoryFull = "Inventory is full";
+    }
+
+    public static class LocationMsgs
+    {
+        public const string EnemyNotFound = "Enemy with name {0} not found in current location";
+    }
+
+    public static class Container
+    {
+        public const string Locked = "It's Locked";
+        public const string Opened = "It's already open.";
+        public const string OpenMessage = "You open the {0}.\n";
+        public const string UnlockMessage = "You have unlocked the {0}.\n";
+        public const string MissingKey = "You don't have the key!";
     }
 
     public static class Battle
     {
         public const string WhatWillYouDo = "-- What will you do? --";
         public const string AttackOption = "1. Attack";
+        public const string DefendOption = "2. Defend";
+        public const string UseItemOption = "3. Use Item";
+        public const string FleeOption = "4. Flee";
         public const string YouAttack = "You attack the enemy for {0} damage";
         public const string EnemyAttack = "You take {0} damage from the enemy attack";
         public const string EnemyKilled = "You have killed {0}";
@@ -63,5 +92,17 @@
         };
 
         public const string TeleportArrival = "You feel your body reassemble in a new location...";
+    }
+
+    public static class SceneMsgs
+    {
+        public const string EnterScene = "Entering Scene...";
+        public const string ExitScene = "Exiting Scene...";
+    }
+
+    public static class ErrorMsgs
+    {
+        public const string NoScene = "No active scene.";
+        public const string NoLocation = "Location not found";
     }
 }

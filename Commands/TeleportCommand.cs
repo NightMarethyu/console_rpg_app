@@ -1,10 +1,10 @@
 ﻿public class TeleportCommand : Command
 {
     public override string Name => "teleport";
-    public override string Description => "Teleport to a connected location or down a connected path";
-    public override string Usage => "teleport";
+    public override string Description => GameStrings.Commands.Teleport;
+    public override string Usage => GameStrings.Commands.TeleportUsage;
     public override CommandType Type => CommandType.Teleport;
-    public override List<string> Aliases => new List<string> { "teleport", "tp", "warp", "blink", "fasttravel", "portal" };
+    public override List<string> Aliases => GameStrings.Commands.TeleportAliases;
 
     public override bool IsValid(Player player, Location location)
     {
@@ -18,6 +18,7 @@
 
     public override void Execute(Player player, Location location, string[] args)
     {
+        base.Execute(player, location, args);
         if (location is TeleportLocation teleportLocation)
         {
             PrintTeleportEffect();
@@ -27,7 +28,7 @@
 
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("You feel your body reassemble in a new location...");
+            Console.WriteLine(GameStrings.Teleport.TeleportArrival);
             Console.ResetColor();
             Console.WriteLine();
 
@@ -38,16 +39,8 @@
     private void PrintTeleportEffect()
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
-        string[] zapLines = new[]
-        {
-        "     ⚡⚡⚡ ✨✨✨ ⚡⚡⚡",
-        "  > The runes shimmer as your body begins to fade...",
-        "            ✨✨✨",
-        "  > You vanish in a swirl of arcane energy...",
-        "     ⚡⚡⚡ WHOOSH ⚡⚡⚡"
-    };
 
-        foreach (var line in zapLines)
+        foreach (var line in GameStrings.Teleport.ZapLines)
         {
             Console.WriteLine(line);
             Thread.Sleep(300);

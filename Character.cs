@@ -44,7 +44,7 @@ public abstract class Character
         }
         else
         {
-            throw new ArgumentException("Location not found!");
+            throw new ArgumentException(GameStrings.ErrorMsgs.NoLocation);
         }
     }
 

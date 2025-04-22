@@ -45,7 +45,7 @@ public class Inventory
         if (MaxSize == null || items.Count < MaxSize)
             items.Add(item);
         else
-            Console.WriteLine("Inventory is full!");
+            Console.WriteLine(GameStrings.Inventory.InventoryFull);
     }
 
     public void RemoveItem(Item item)
@@ -53,7 +53,7 @@ public class Inventory
         if (items.Contains(item))
             items.Remove(item);
         else
-            Console.WriteLine("Item not found in inventory!");
+            Console.WriteLine(GameStrings.Inventory.ItemNotFound);
     }
 
     public bool HasItem(string itemName)
@@ -81,7 +81,7 @@ public class Inventory
     {
         if (items.Count == 0)
         {
-            Console.WriteLine("Inventory is empty.");
+            Console.WriteLine(GameStrings.Inventory.InventoryEmpty);
             return;
         }
 

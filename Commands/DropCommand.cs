@@ -2,15 +2,16 @@
 {
     public override string Name => "drop";
 
-    public override string Description => "Remove an item from your inventory and drop it in your current location";
+    public override string Description => GameStrings.Commands.Drop;
 
-    public override string Usage => "drop {item name} {optional: quantity}";
+    public override string Usage => GameStrings.Commands.DropUsage;
     public override CommandType Type => CommandType.Drop;
-    public override List<string> Aliases => new List<string> { "drop", "discard", "throw", "remove", "leave", "d" };
+    public override List<string> Aliases => GameStrings.Commands.DropAliases;
 
 
     public override void Execute(Player player, Location location, string[] args)
     {
+        base.Execute(player, location, args);
         Item? item = player.Inventory.GetItem(args[1]);
         if (item != null && item.Type != ItemType.Quest)
         {
@@ -30,12 +31,12 @@
                         }
                         else
                         {
-                            Console.WriteLine("You can't drop that many, not enough in your inventory");
+                            Console.WriteLine(GameStrings.Inventory.NotEnoughQuantity);
                         }
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine($"{Usage}");
+                        Console.WriteLine(GameStrings.Commands.DropUsage);
                         throw;
                     }
                     
@@ -45,12 +46,12 @@
             {
                 player.Inventory.RemoveItem(item);
                 location.Inventory?.AddItem(item);
-                Console.WriteLine("You dropped " + item.Name);
+                Console.WriteLine(GameStrings.Inventory.YouDroppedItem, item.Name);
             }
         }
         else
         {
-            Console.WriteLine("You can't drop quest items!");
+            Console.WriteLine(GameStrings.Inventory.QuestItemDropWarning);
         }
     }
 

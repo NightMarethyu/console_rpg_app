@@ -1,10 +1,10 @@
 ﻿public class QuitCommand : Command
 {
     public override string Name => "quit";
-    public override string Description => "Close the game";
-    public override string Usage => "quit";
+    public override string Description => GameStrings.Commands.Quit;
+    public override string Usage => GameStrings.Commands.QuitUsage;
     public override CommandType Type => CommandType.Quit;
-    public override List<string> Aliases => new List<string> { "quit", "exit", "leave", "q", "bye" };
+    public override List<string> Aliases => GameStrings.Commands.QuitAliases;
 
 
     public override bool IsValid(Player player, Location location)
