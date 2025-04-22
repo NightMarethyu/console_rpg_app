@@ -39,7 +39,7 @@
         {
         "     ⚡⚡⚡ ✨✨✨ ⚡⚡⚡",
         "  > The runes shimmer as your body begins to fade...",
-        "     ✨✨✨",
+        "            ✨✨✨",
         "  > You vanish in a swirl of arcane energy...",
         "     ⚡⚡⚡ WHOOSH ⚡⚡⚡"
     };
