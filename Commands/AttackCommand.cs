@@ -11,22 +11,11 @@
 
     public override void Execute(Player player, Location location, string[] args)
     {
-        if (location.EnemyExists(args[1])) {
-            var enemy = location.FindFirstEnemy(args[1]);
-            if (enemy != null)
-            {
-                player.Attack(enemy);
-                Console.WriteLine("You attacked " + enemy.Name + " for " + player.AttackVal + " Damage");
-                Console.WriteLine(enemy.Name + " has " + enemy.HP + " HP remaining");
-            } else
-            {
-                Console.WriteLine("Enemy not found!");
-                return;
-            }
-                
+        if (location.HasEnemies()) {
+            SceneManager.SetScene(new BattleScene(player, SceneManager.currentScene, location.FindFirstEnemy(args[1])));
         } else
         {
-            Console.WriteLine("There's no enemy here with the name " + args[1]);
+            Console.WriteLine("There's no enemy in this location");
             return;
         }
     }

@@ -87,11 +87,14 @@
     }
 
     public bool HasConnected() { return connected.Count > 0; }
-    public bool HasEnemies() { return characters.Count >= 1; }
-
-    public bool EnemyExists(string name)
+    public bool HasEnemies()
     {
-        return (characters.Any(character => character.Name.ToLower() == name));
+        foreach (Character enemy in characters)
+        {
+            if (enemy is Enemy)
+                return true;
+        }
+        return false;
     }
 
     public Enemy? FindFirstEnemy(string name)

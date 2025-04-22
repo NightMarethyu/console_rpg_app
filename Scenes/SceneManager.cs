@@ -1,6 +1,6 @@
 ﻿public static class SceneManager
 {
-    private static Scene currentScene;
+    public static Scene? currentScene {  get; private set; }
 
     public static void SetScene(Scene newScene)
     {

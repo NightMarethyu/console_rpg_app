@@ -1,13 +1,10 @@
 ﻿using System;
 using System.ComponentModel.Design;
 
-public class Parser
+public static class Parser
 {
-	public Parser()
-	{
-	}
 
-    public void Parse(Player player, Location location, string com)
+    public static void Parse(Player player, Location location, string com)
 	{
 		string[] coms = com.ToLower().Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
 		if (coms.Length == 0)

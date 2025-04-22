@@ -25,6 +25,7 @@ public class Player : Character
 
     public override void Death()
     {
+        base.Death();
         Console.WriteLine("You have died.");
         Console.WriteLine("Game Over.");
         Thread.Sleep(2000);

@@ -1,6 +1,5 @@
 ﻿Player player = new Player();
 Enemy enemy = new Enemy();
-Parser parser = new Parser();
 CommandManager.Initialize();
 ItemFactory.LoadItemsFromJSON("items.json");
 
@@ -43,7 +42,7 @@ enemy.SetLocation(loc7);
 
 loc4.Describe();
 
-SceneManager.SetScene(new ExploreScene(player, parser));
+SceneManager.SetScene(new ExploreScene(player));
 SceneManager.RunCurrentScene();
 
 /*while (true)

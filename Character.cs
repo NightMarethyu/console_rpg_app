@@ -5,6 +5,7 @@ public abstract class Character
     public string Name { get; protected set; }
     public int HP { get; protected set; }
     public int AttackVal { get; protected set; }
+    public bool IsAlive { get; protected set; } = true;
 
     public int Strength { get; protected set; } 
     public int Dexterity { get; protected set; }
@@ -53,5 +54,10 @@ public abstract class Character
         return this.Name;
     }
 
-    public abstract void Death();
+    public virtual void Death() { IsAlive = false; }
+
+    public virtual int Speed()
+    {
+        return Dexterity + Dice.D20();
+    }
 }

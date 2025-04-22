@@ -28,19 +28,37 @@
             }
         }
 
-        if (foundItem != null)
+        if (foundItem != null && foundItem.IsTakeable)
         {
             player.Inventory.AddItem(foundItem);
             Console.WriteLine("You have added " + foundItem.Name + " to your inventory");
         }
         else
         {
-            Console.WriteLine("No such item to take");
+            Console.WriteLine("Can't take " + itemName);
         }
     }
 
     public override bool IsValid(Player player, Location location)
     {
-        return location.Inventory != null && ( location.Inventory.GetAllItems().Any(item => item.IsTakeable) || location.Inventory.HasItemType(ItemType.Container));
+        if (location.Inventory != null)
+        {
+            if (location.Inventory.GetAllItems().Any(item => item.IsTakeable))
+            {
+                return true;
+            }
+            else if (location.Inventory.HasItemType(ItemType.Container))
+            {
+                var items = location.Inventory.GetAllItems();
+                foreach ( var item in items )
+                {
+                    if (item is ContainerItem i && i.IsOpen)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

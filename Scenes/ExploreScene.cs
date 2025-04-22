@@ -1,13 +1,6 @@
 ﻿public class ExploreScene : Scene
 {
-    private Player player;
-    private Parser parser;
-
-    public ExploreScene(Player player, Parser parser)
-    {
-        this.player = player;
-        this.parser = parser;
-    }
+    public ExploreScene(Player play) : base(play) { }
 
     public override void Run()
     {
@@ -16,13 +9,13 @@
 
         if (input != null)
         {
-            parser.Parse(player, player.CurrentLocation, input);
+            Parser.Parse(player, player.CurrentLocation, input);
         }
     }
 
     public override void Enter()
     {
-        parser.Parse(player, player.CurrentLocation, "help");
+        Parser.Parse(player, player.CurrentLocation, "help");
     }
 
 }
