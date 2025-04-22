@@ -3,6 +3,9 @@
     public override string Name => "teleport";
     public override string Description => "Teleport to a connected location or down a connected path";
     public override string Usage => "teleport";
+    public override CommandType Type => CommandType.Teleport;
+    public override List<string> Aliases => new List<string> { "teleport", "tp", "warp", "blink", "fasttravel", "portal" };
+
     public override bool IsValid(Player player, Location location)
     {
         if (location is TeleportLocation)

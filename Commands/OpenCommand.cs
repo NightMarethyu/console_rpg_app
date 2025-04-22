@@ -5,6 +5,9 @@
     public override string Description => "Access the contents of a container";
 
     public override string Usage => "open {item name}";
+    public override CommandType Type => CommandType.Open;
+    public override List<string> Aliases => new List<string> { "open", "o" };
+
 
     public override void Execute(Player player, Location location, string[] args)
     {

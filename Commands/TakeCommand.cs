@@ -5,6 +5,9 @@
     public override string Description => "Add an item to your inventory";
 
     public override string Usage => "take {item name}";
+    public override CommandType Type => CommandType.Take;
+    public override List<string> Aliases => new List<string> { "take", "get", "grab", "pick", "collect", "t" };
+
 
     public override void Execute(Player player, Location location, string[] args)
     {

@@ -5,6 +5,9 @@
     public override string Description => "Remove an item from your inventory and drop it in your current location";
 
     public override string Usage => "drop {item name} {optional: quantity}";
+    public override CommandType Type => CommandType.Drop;
+    public override List<string> Aliases => new List<string> { "drop", "discard", "throw", "remove", "leave", "d" };
+
 
     public override void Execute(Player player, Location location, string[] args)
     {

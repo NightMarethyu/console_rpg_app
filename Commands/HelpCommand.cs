@@ -3,6 +3,9 @@
     public override string Name => "help";
     public override string Description => "Displays a list of available commands.";
     public override string Usage => "help";
+    public override CommandType Type => CommandType.Help;
+    public override List<string> Aliases => new List<string> { "help", "?", "info", "commands", "h" };
+
 
     public override bool IsValid(Player player, Location location)
     {

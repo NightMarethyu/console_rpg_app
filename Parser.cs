@@ -12,7 +12,7 @@ public static class Parser
 
 		foreach (Command command in CommandManager.Commands)
         {
-            if (command.Name == coms[0])
+            if (command.Aliases.Contains(coms[0]))
             {
                 command.Execute(player, location, coms);
                 return;
