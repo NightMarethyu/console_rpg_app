@@ -56,6 +56,10 @@
     public static class LocationMsgs
     {
         public const string EnemyNotFound = "Enemy with name {0} not found in current location";
+        public const string BaseDescribe = "You are currently at location {0}";
+        public const string ConnectedLocals = "There are paths connected to the following locations: ";
+        public const string Characters = "The following characters can be found here";
+        public const string LocationItems = "This area contains the following items:";
     }
 
     public static class Container
@@ -82,6 +86,7 @@
 
     public static class Teleport
     {
+        public static string TeleporterExists = "This room has a teleporter!";
         public static readonly string[] ZapLines = new[]
         {
             "     ⚡⚡⚡ ✨✨✨ ⚡⚡⚡",
@@ -104,5 +109,6 @@
     {
         public const string NoScene = "No active scene.";
         public const string NoLocation = "Location not found";
+        public const string TeleportUnset = "Teleport is not set";
     }
 }

@@ -32,10 +32,10 @@
 
     public virtual void Describe()
     {
-        Console.WriteLine("You are currently at location " + name);
+        Console.WriteLine(GameStrings.LocationMsgs.BaseDescribe);
         if (connected.Count > 0)
         {
-            Console.WriteLine("There are paths connected to the following locations: ");
+            Console.WriteLine(GameStrings.LocationMsgs.ConnectedLocals);
             foreach (Location location in connected)
             {
                 Console.WriteLine(location.name);
@@ -43,7 +43,7 @@
         }
         if (characters.Count > 0)
         {
-            Console.WriteLine("This area contains the following:");
+            Console.WriteLine(GameStrings.LocationMsgs.Characters);
             foreach (Character character in characters)
             {
                 Console.WriteLine(character.Describe());
@@ -51,7 +51,7 @@
         }
         if (Inventory != null)
         {
-            Console.WriteLine("This area contains the following items:");
+            Console.WriteLine(GameStrings.LocationMsgs.LocationItems);
             foreach (var item in Inventory.GetAllItems())
             {
                 if (item is ContainerItem container)
