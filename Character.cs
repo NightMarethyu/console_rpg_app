@@ -15,6 +15,8 @@ public abstract class Character
 
     public Inventory Inventory { get; protected set; }
 
+    public int ArmorValue { get; protected set; }
+
     public Character()
 	{
         this.Name = "Empty Character";

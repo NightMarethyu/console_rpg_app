@@ -30,7 +30,11 @@ public class Player : Character
 
     public void Equip(Item item)
     {
-        if (item == null || !item.IsEquippable || item.EquipmentSlot == null) return;
+        if (item == null || !item.IsEquippable || item.EquipmentSlot == null)
+        {
+            Console.WriteLine(GameStrings.Inventory.NotEquippable);
+            return;
+        }
         var slot = item.EquipmentSlot.Value;
 
         if (PlayerEquipment.ContainsKey(slot) && PlayerEquipment[slot] != null)
