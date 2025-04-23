@@ -12,7 +12,7 @@
     public override void Execute(Player player, Location location, string[] args)
     {
         base.Execute(player, location, args);
-        string itemName = args[1];
+        string itemName = string.Join(" ", args.Skip(1)).Trim();
 
         Item? foundItem = location.Inventory?.GetItem(itemName);
 
@@ -23,7 +23,7 @@
                 if (item is ContainerItem container && container.IsOpen)
                 {
                     foundItem = container.Inventory.GetItem(itemName);
-                    if (foundItem != null)
+                    if (foundItem != null && foundItem.IsTakeable)
                     {
                         container.Inventory.RemoveItem(foundItem);
                         break;

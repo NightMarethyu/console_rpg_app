@@ -60,7 +60,7 @@
                     
                     if (container.IsOpen)
                     {
-                        Console.WriteLine($"Contains:");
+                        Console.WriteLine(GameStrings.General.Contains);
                         container.Inventory.ListItems();
                     }
                 }

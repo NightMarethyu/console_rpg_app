@@ -35,6 +35,7 @@ if (loc8Chest is ContainerItem chest)
 {
     chest.Inventory.AddItem(ItemFactory.Create("sword", 1));
     chest.Inventory.AddItem(ItemFactory.Create("shield", 1));
+    chest.Inventory.AddItem(ItemFactory.Create("gold coin", 10));
 }
 
 player.SetLocation(loc4);
@@ -44,17 +45,3 @@ loc4.Describe();
 
 SceneManager.SetScene(new ExploreScene(player));
 SceneManager.RunCurrentScene();
-
-/*while (true)
-{
-    Console.Write("> ");
-    String? input = Console.ReadLine();
-
-    if (input == null)
-    {
-        continue;
-    }
-
-    parser.Parse(player, player.CurrentLocation, input);
-}
-*/

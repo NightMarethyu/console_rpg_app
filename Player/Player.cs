@@ -1,8 +1,21 @@
-﻿using System;
+﻿public enum EquipmentSlots
+{
+    Head,
+    Chest,
+    Legs,
+    Feet,
+    Hands,
+    MainHand,
+    OffHand,
+    Ring,
+    Amulet,
+    Cloak,
+    Belt
+}
 
 public class Player : Character
 {
-	
+	public Dictionary<EquipmentSlots, Item?> PlayerEquipment = new Dictionary<EquipmentSlots, Item?>();
 
 	public Player() : base()
 	{

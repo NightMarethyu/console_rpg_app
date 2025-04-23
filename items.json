@@ -7,7 +7,8 @@
     "value": 10,
     "isTakeable": true,
     "isStackable": false,
-    "attackValue": 10
+    "attackValue": 10,
+    "equipmentSlot": "MainHand"
   },
   {
     "id": "shield",
@@ -17,13 +18,23 @@
     "value": 10,
     "isTakeable": true,
     "isStackable": false,
-    "defenseValue": 10
+    "defenseValue": 10,
+    "equipmentSlot": "OffHand"
   },
   {
-    "id": "chest",
-    "name": "Chest",
-    "description": "A weathered wooden chest bound in iron, its surface scarred by time and battle",
-    "type": "Container",
-    "isTakeable": false
+     "id": "chest",
+     "name": "Chest",
+     "description": "A weathered wooden chest bound in iron, its surface scarred by time and battle",
+     "type": "Container",
+     "isTakeable": false
+  },
+  {
+     "id": "gold coin",
+     "name": "Gold Coin",
+     "description": "A gleaming gold coin stamped with the profile of a long-dead king",
+     "type": "Misc",
+     "isTakeable": true,
+     "value": 1,
+     "isStackable": true
   }
 ]

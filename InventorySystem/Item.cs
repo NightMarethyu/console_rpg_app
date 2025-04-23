@@ -23,6 +23,8 @@ public abstract class Item
     public bool IsTakeable { get; set; } = true;
     public int Quantity { get; set; } = 1;
     public bool IsStackable { get; set; } = false;
+    public bool IsEquippable { get; set; } = false;
+    public EquipmentSlots? EquipmentSlot { get; protected set; }
 
     public Item()
     {
@@ -68,7 +70,10 @@ public abstract class Item
         parts.Add($"{prefix}: {Description}");
 
         if (Value != null)
-            parts.Add($"Value: {Value}");
+        {
+            int curVal = (int)Value * Quantity;
+            parts.Add($"Value: {curVal}");
+        }
 
         if (!string.IsNullOrEmpty(Effects))
             parts.Add($"Effects: {Effects}");

@@ -68,14 +68,35 @@ public class Inventory
 
     public Item? GetItem(string itemName)
     {
+        itemName = itemName.Trim().ToLower();
+
+        Item? value = null;
         foreach (Item item in items)
         {
             if (item.Name.Equals(itemName, StringComparison.OrdinalIgnoreCase))
-                return item;
+                value = item;
         }
+        value ??= GetItemByPartialName(itemName);
         //Console.WriteLine("Item not found in inventory!");
-        return null;
+        return value;
     }
+
+    private Item? GetItemByPartialName(string partialName)
+    {
+        partialName = partialName.Trim().ToLower();
+
+        return items.FirstOrDefault(item =>
+            item.Name.Equals(partialName, StringComparison.OrdinalIgnoreCase) ||
+            item.ID.Equals(partialName, StringComparison.OrdinalIgnoreCase))
+        ?? items.FirstOrDefault(item =>
+            item.Name.StartsWith(partialName, StringComparison.OrdinalIgnoreCase) ||
+            item.ID.StartsWith(partialName, StringComparison.OrdinalIgnoreCase))
+        ?? items.FirstOrDefault(item =>
+            item.Name.Contains(partialName, StringComparison.OrdinalIgnoreCase) ||
+            item.ID.Contains(partialName, StringComparison.OrdinalIgnoreCase));
+    }
+
+
 
     public void ListItems()
     {

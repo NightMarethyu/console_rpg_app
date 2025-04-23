@@ -6,6 +6,7 @@
         public const string InvalidCommand = "Invalid command\n";
         public const string GameOver = "Game Over.";
         public const string YouHaveDied = "You have died.";
+        public const string Contains = "Contains";
     }
 
     public static class Commands
@@ -19,6 +20,7 @@
         public const string Attack = "Hit the enemy with an attack";
         public const string Quit = "Close the game";
         public const string Teleport = "Teleport to a connected location or down a connected path";
+        public const string Inventory = "Displays the player's inventory and equipped items";
 
         public const string MoveUsage = "move {location name}";
         public const string LookUsage = "look";
@@ -29,6 +31,7 @@
         public const string QuitUsage = "quit";
         public const string TeleportUsage = "teleport";
         public const string HelpUsage = "help";
+        public const string InventoryUsage = "inventory";
 
         public static readonly List<string> AttackAliases = ["attack", "hit", "strike", "fight", "a", "atk"];
         public static readonly List<string> HelpAliases = ["help", "?", "info", "commands", "h"];
@@ -39,6 +42,7 @@
         public static readonly List<string> QuitAliases = ["quit", "exit", "leave", "q", "bye"];
         public static readonly List<string> TakeAliases = ["take", "get", "grab", "pick", "collect", "t"];
         public static readonly List<string> TeleportAliases = ["teleport", "tp", "warp", "blink", "fasttravel", "portal"];
+        public static readonly List<string> InventoryAliases = ["inventory", "i", "inv", "items", "bag", "stuff", "gear", "backpack"];
     }
 
     public static class Inventory
@@ -51,6 +55,7 @@
         public const string CannotTakeItem = "Can't take {0}";
         public const string InventoryEmpty = "Inventory is empty.";
         public const string InventoryFull = "Inventory is full";
+        public const string PlayerInventory = "Your inventory contains:";
     }
 
     public static class LocationMsgs

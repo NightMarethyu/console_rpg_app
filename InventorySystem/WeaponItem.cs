@@ -10,6 +10,7 @@
         Value = value;
         AttackValue = attackValue;
         Type = ItemType.Weapon;
+        IsEquippable = true;
     }
 
     public override Item Clone(int q)

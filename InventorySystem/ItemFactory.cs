@@ -42,7 +42,7 @@ public static class ItemFactory
                 item = new WeaponItem(data.ID, data.Name, data.Description, data.Value ?? 0, data.AttackValue ?? 0);
                 break;
             case ItemType.Armor:
-                item = new ArmorItem(data.ID, data.Name, data.Description, data.DefenseValue ?? 0);
+                item = new ArmorItem(data.ID, data.Name, data.Description, data.DefenseValue ?? 0, data.EquipmentSlot);
                 break;
             case ItemType.Container:
                 item = new ContainerItem(data.ID, data.Name, data.Description);
