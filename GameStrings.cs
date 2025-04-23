@@ -21,6 +21,7 @@
         public const string Quit = "Close the game";
         public const string Teleport = "Teleport to a connected location or down a connected path";
         public const string Inventory = "Displays the player's inventory and equipped items";
+        public const string Equip = "Equip an item from your inventory for use later";
 
         public const string MoveUsage = "move {location name}";
         public const string LookUsage = "look";
@@ -32,6 +33,7 @@
         public const string TeleportUsage = "teleport";
         public const string HelpUsage = "help";
         public const string InventoryUsage = "inventory";
+        public const string EquipUsage = "equip {item name}";
 
         public static readonly List<string> AttackAliases = ["attack", "hit", "strike", "fight", "a", "atk"];
         public static readonly List<string> HelpAliases = ["help", "?", "info", "commands", "h"];
@@ -43,6 +45,7 @@
         public static readonly List<string> TakeAliases = ["take", "get", "grab", "pick", "collect", "t"];
         public static readonly List<string> TeleportAliases = ["teleport", "tp", "warp", "blink", "fasttravel", "portal"];
         public static readonly List<string> InventoryAliases = ["inventory", "i", "inv", "items", "bag", "stuff", "gear", "backpack"];
+        public static readonly List<string> EquipAliases = ["equip", "wear", "wield", "use", "puton", "don", "ready", "e"];
     }
 
     public static class Inventory
@@ -56,6 +59,7 @@
         public const string InventoryEmpty = "Inventory is empty.";
         public const string InventoryFull = "Inventory is full";
         public const string PlayerInventory = "Your inventory contains:";
+        public const string NotEquippable = "That item can't be equipped";
     }
 
     public static class LocationMsgs

@@ -11,7 +11,8 @@
 	Teleport,
 	Inventory,
 	Talk,
-	Use
+	Use,
+	Equip
 }
 
 public abstract class Command

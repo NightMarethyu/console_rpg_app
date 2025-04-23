@@ -96,8 +96,6 @@ public class Inventory
             item.ID.Contains(partialName, StringComparison.OrdinalIgnoreCase));
     }
 
-
-
     public void ListItems()
     {
         if (items.Count == 0)

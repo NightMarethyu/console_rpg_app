@@ -11,6 +11,13 @@ public enum ItemType
     Misc
 }
 
+public interface IItemEffect
+{
+    void Apply(Player player);
+    void Remove(Player player);
+}
+
+
 public abstract class Item
 {
     public string ID { get; protected set; }
