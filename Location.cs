@@ -32,7 +32,7 @@
 
     public virtual void Describe()
     {
-        Console.WriteLine(GameStrings.LocationMsgs.BaseDescribe);
+        Console.WriteLine(GameStrings.LocationMsgs.BaseDescribe, name);
         if (connected.Count > 0)
         {
             Console.WriteLine(GameStrings.LocationMsgs.ConnectedLocals);

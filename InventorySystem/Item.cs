@@ -31,7 +31,7 @@ public abstract class Item
     public int Quantity { get; set; } = 1;
     public bool IsStackable { get; set; } = false;
     public bool IsEquippable { get; set; } = false;
-    public EquipmentSlots? EquipmentSlot { get; protected set; }
+    public EquipmentSlots? EquipmentSlot { get; set; }
 
     public Item()
     {

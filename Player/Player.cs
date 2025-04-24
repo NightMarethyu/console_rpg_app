@@ -35,6 +35,7 @@ public class Player : Character
             Console.WriteLine(GameStrings.Inventory.NotEquippable);
             return;
         }
+
         var slot = item.EquipmentSlot.Value;
 
         if (PlayerEquipment.ContainsKey(slot) && PlayerEquipment[slot] != null)
@@ -49,7 +50,7 @@ public class Player : Character
         ApplyItemEffects(item);
     }
 
-    override public void SetLocation(Location location)
+    public override void SetLocation(Location location)
     {
         if (location != null)
             this.CurrentLocation = location;
@@ -95,6 +96,23 @@ public class Player : Character
             default:
                 if (item is IItemEffect effectItem) effectItem.Remove(this);
                 break;
+        }
+    }
+
+    public void PlayerInventory()
+    {
+        Console.WriteLine(GameStrings.Inventory.PlayerInventory);
+        Inventory.ListItems();
+        Console.WriteLine(GameStrings.PlayerStrings.EquippedItems);
+        foreach (KeyValuePair<EquipmentSlots, Item?> kvp in PlayerEquipment)
+        {
+            if (kvp.Value != null)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write($"[{kvp.Key}] ");
+                Console.ResetColor();
+                Console.WriteLine(kvp.Value.Describe());
+            }
         }
     }
 

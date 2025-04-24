@@ -18,7 +18,6 @@
     public override void Execute(Player player, Location location, string[] args)
     {
         base.Execute(player, location, args);
-        Console.WriteLine(GameStrings.Inventory.PlayerInventory);
-        player.Inventory.ListItems();
+        player.PlayerInventory();
     }
 }

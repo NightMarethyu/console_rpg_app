@@ -12,7 +12,7 @@
     public bool IsStackable { get; set; } = false;
     public int? AttackValue { get; set; } // WeaponItem specific
     public int? DefenseValue { get; set; } // ArmorItem specific
-    public bool IsEquipable { get; set; } = false;
+    public bool IsEquippable { get; set; } = false;
     public int? MaxSize { get; set; }
     public EquipmentSlots? EquipmentSlot { get; set; }
 }

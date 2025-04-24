@@ -71,6 +71,11 @@
         public const string LocationItems = "This area contains the following items:";
     }
 
+    public static class PlayerStrings
+    {
+        public const string EquippedItems = "Currently equipped items:\n";
+    }
+
     public static class Container
     {
         public const string Locked = "It's Locked";

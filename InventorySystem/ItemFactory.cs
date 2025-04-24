@@ -57,6 +57,8 @@ public static class ItemFactory
         item.Quantity = quantity;
         item.IsTakeable = data.IsTakeable;
         item.IsStackable = data.IsStackable;
+        item.IsEquippable = data.IsEquippable;
+        item.EquipmentSlot = data.EquipmentSlot;
         return item;
     }
 }
