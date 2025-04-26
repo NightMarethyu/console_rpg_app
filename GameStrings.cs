@@ -7,6 +7,13 @@
         public const string GameOver = "Game Over.";
         public const string YouHaveDied = "You have died.";
         public const string Contains = "Contains";
+        public static readonly string[] OpeningMonologue = new[]
+        {
+            "Time is a circle. Fate, a thread. Yours? Unwritten.",
+            "In a world shaped by ancient echoes and forgotten choices, your journey begins.",
+            "Kingdoms rise, shadows stir, and legends twist with every step you take.",
+            "Who will you become... when the echoes call your name?"
+        };
     }
 
     public static class Commands

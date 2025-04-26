@@ -15,21 +15,29 @@ public class BattleScene : Scene
     {
         this.PreviousScene = previousScene;
         this.enemy = enemy;
+        battleLog = new List<string>();
     }
 
     public override void Run()
     {
-        battleLog = new List<string>();
         // Display Battle Menu
-        Console.WriteLine(GameStrings.Battle.WhatWillYouDo);
+
+        /*Console.WriteLine(GameStrings.Battle.WhatWillYouDo);
         Console.WriteLine(GameStrings.Battle.AttackOption);
         //Console.WriteLine(GameStrings.Battle.DefendOption);
         //Console.WriteLine(GameStrings.Battle.UseItemOption);
         //Console.WriteLine(GameStrings.Battle.FleeOption);
         var key = Console.ReadKey();
-        Console.WriteLine("\n");
+        Console.WriteLine("\n");*/
 
-        switch (key.Key)
+        InputManager.RunMenu(new List<MenuOption>
+        {
+            new MenuOption(GameStrings.Battle.AttackOption, () => ResolveSpeed(CombatAction.Attack)),
+            new MenuOption(GameStrings.Battle.DefendOption, () => ResolveSpeed(CombatAction.Defend)),
+            new MenuOption(GameStrings.Battle.FleeOption, () => ResolveSpeed(CombatAction.Flee)),
+        }, GameStrings.Battle.WhatWillYouDo, battleLog);
+
+/*        switch (key.Key)
         {
             case ConsoleKey.NumPad1:
                 ResolveSpeed(CombatAction.Attack);
@@ -37,7 +45,7 @@ public class BattleScene : Scene
             case ConsoleKey.D1:
                 ResolveSpeed(CombatAction.Attack);
                 break;
-            /*case ConsoleKey.NumPad2:
+            *//*case ConsoleKey.NumPad2:
                 ResolveSpeed(CombatAction.Defend);
                 break;
             case ConsoleKey.D2:
@@ -50,17 +58,17 @@ public class BattleScene : Scene
             case ConsoleKey.NumPad4:
                 break;
             case ConsoleKey.D4:
-                break;*/
+                break;*//*
             default:
                 Console.WriteLine(GameStrings.General.InvalidCommand);
                 break;
-        }
+        }*/
 
-        foreach (string log in battleLog) Console.WriteLine(log);
         Console.WriteLine(GameStrings.Battle.EndOfTurn);
 
         if (!enemy.IsAlive)
         {
+            foreach (string line in battleLog) { Console.WriteLine(line); }
             Console.WriteLine(GameStrings.Battle.EnemyKilled, enemy.Name);
             IsRunning = false;
             PreviousScene.IsRunning = true;
