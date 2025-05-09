@@ -11,15 +11,15 @@ public class EquipCommand : Command
 
     public override List<string> Aliases => GameStrings.Commands.EquipAliases;
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
         List<Item> items = player.Inventory.GetAllItems();
         return items.Any(item => item.IsEquippable);
     }
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
+        base.Execute(player, args);
         string itemName = "";
         if (args.Length > 1)
         {

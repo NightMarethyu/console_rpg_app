@@ -10,14 +10,14 @@
 
     public override CommandType Type => CommandType.Inventory;
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
         return true; // Always valid
     }
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
+        base.Execute(player, args);
         player.PlayerInventory();
     }
 }

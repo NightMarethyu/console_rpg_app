@@ -6,24 +6,23 @@
     public override CommandType Type => CommandType.Teleport;
     public override List<string> Aliases => GameStrings.Commands.TeleportAliases;
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
-        if (location is TeleportLocation)
+        if (player.CurrentLocation is TeleportLocation location)
         {
-            TeleportLocation teleportLocation = (TeleportLocation)location;
-            return teleportLocation.teleport != null;
+            return location.teleport != null;
         }
         return false; // Not valid if the location is not an TeleportLocation
     }
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
-        if (location is TeleportLocation teleportLocation)
+        base.Execute(player, args);
+        if (player.CurrentLocation is TeleportLocation location)
         {
             PrintTeleportEffect();
 
-            Location target = teleportLocation.Teleport();
+            Location target = location.Teleport();
             player.SetLocation(target);
 
             Console.WriteLine();

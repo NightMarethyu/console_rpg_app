@@ -7,13 +7,13 @@
     public override List<string> Aliases => GameStrings.Commands.LookAliases;
 
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
         return true; // Always valid
     }
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        location.Describe();
+        player.CurrentLocation.Describe();
     }
 }

@@ -14,7 +14,7 @@ public static class Parser
         {
             if (command.Aliases.Contains(coms[0]))
             {
-                command.Execute(player, location, coms);
+                command.Execute(player, coms);
                 return;
             }
         }

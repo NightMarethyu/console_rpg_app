@@ -7,12 +7,12 @@
     public override List<string> Aliases => GameStrings.Commands.QuitAliases;
 
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
         return true; // Always valid
     }
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
         Environment.Exit(0);
     }

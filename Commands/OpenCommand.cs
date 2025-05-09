@@ -9,20 +9,20 @@
     public override List<string> Aliases => GameStrings.Commands.OpenAliases;
 
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
-        if (location.Inventory != null && location.Inventory.HasItemType(ItemType.Container))
+        base.Execute(player, args);
+        if (player.CurrentLocation.Inventory != null && player.CurrentLocation.Inventory.HasItemType(ItemType.Container))
         {
-            if (location.Inventory.GetItem(args[1]) is ContainerItem container)
+            if (player.CurrentLocation.Inventory.GetItem(args[1]) is ContainerItem container)
             {
                 container.Open();
             }
         }
     }
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
-        return location.Inventory != null && location.Inventory.HasItemType(ItemType.Container);
+        return player.CurrentLocation.Inventory != null && player.CurrentLocation.Inventory.HasItemType(ItemType.Container);
     }
 }

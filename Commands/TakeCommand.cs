@@ -9,16 +9,16 @@
     public override List<string> Aliases => GameStrings.Commands.TakeAliases;
 
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
+        base.Execute(player, args);
         string itemName = string.Join(" ", args.Skip(1)).Trim();
 
-        Item? foundItem = location.Inventory?.GetItem(itemName);
+        Item? foundItem = player.CurrentLocation.Inventory?.GetItem(itemName);
 
-        if (foundItem == null && location.Inventory != null)
+        if (foundItem == null && player.CurrentLocation.Inventory != null)
         {
-            foreach (var item in location.Inventory.GetAllItems())
+            foreach (var item in player.CurrentLocation.Inventory.GetAllItems())
             {
                 if (item is ContainerItem container && container.IsOpen)
                 {
@@ -43,17 +43,17 @@
         }
     }
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
-        if (location.Inventory != null)
+        if (player.CurrentLocation.Inventory != null)
         {
-            if (location.Inventory.GetAllItems().Any(item => item.IsTakeable))
+            if (player.CurrentLocation.Inventory.GetAllItems().Any(item => item.IsTakeable))
             {
                 return true;
             }
-            else if (location.Inventory.HasItemType(ItemType.Container))
+            else if (player.CurrentLocation.Inventory.HasItemType(ItemType.Container))
             {
-                var items = location.Inventory.GetAllItems();
+                var items = player.CurrentLocation.Inventory.GetAllItems();
                 foreach ( var item in items )
                 {
                     if (item is ContainerItem i && i.IsOpen)

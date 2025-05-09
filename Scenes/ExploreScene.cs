@@ -5,7 +5,7 @@
     public override void Run()
     {
         var validCommands = CommandManager.Commands
-            .Where(command => command.IsValid(player, player.CurrentLocation))
+            .Where(command => command.IsValid(player))
             .OrderBy(cmd => cmd.Name)
             .ToList();
 
@@ -14,7 +14,7 @@
         foreach (var command in validCommands)
         {
             string[] temp = ["temp"];
-            MenuOption opt = new MenuOption(command.Name, () => command.Execute(player, player.CurrentLocation, temp));
+            MenuOption opt = new MenuOption(command.Name, () => command.Execute(player, temp));
             options.Add(opt);
         }
 

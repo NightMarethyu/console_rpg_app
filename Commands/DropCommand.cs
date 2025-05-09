@@ -9,9 +9,9 @@
     public override List<string> Aliases => GameStrings.Commands.DropAliases;
 
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
+        base.Execute(player, args);
         Item? item = player.Inventory.GetItem(args[1]);
         if (item != null && item.Type != ItemType.Quest)
         {
@@ -26,8 +26,8 @@
                         {
                             var droppedItem = ItemFactory.Create(item.ID, quantity);
                             item.Quantity -= quantity;
-                            if (location.Inventory == null) { location.AddInventory(); }
-                            location.Inventory.AddItem(droppedItem);
+                            if (player.CurrentLocation.Inventory == null) { player.CurrentLocation.AddInventory(); }
+                            player.CurrentLocation.Inventory.AddItem(droppedItem);
                         }
                         else
                         {
@@ -45,7 +45,7 @@
             else 
             {
                 player.Inventory.RemoveItem(item);
-                location.Inventory?.AddItem(item);
+                player.CurrentLocation.Inventory?.AddItem(item);
                 Console.WriteLine(GameStrings.Inventory.YouDroppedItem, item.Name);
             }
         }
@@ -55,7 +55,7 @@
         }
     }
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
         return player.Inventory.IsNotEmpty();
     }

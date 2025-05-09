@@ -7,21 +7,21 @@
     public override List<string> Aliases => GameStrings.Commands.MoveAliases;
 
 
-    public override bool IsValid(Player player, Location location)
+    public override bool IsValid(Player player)
     {
-        return location.HasConnected();
+        return player.CurrentLocation.HasConnected();
     }
 
-    public override void Execute(Player player, Location location, string[] args)
+    public override void Execute(Player player, string[] args)
     {
-        base.Execute(player, location, args);
+        base.Execute(player, args);
         string locationName = "";
         for (int i = 1; i < args.Length; i++)
         {
             locationName += args[i] + " ";
         }
         locationName = locationName.Trim();
-        player.SetLocation(location.GetNextLocation(locationName));
+        player.SetLocation(player.CurrentLocation.GetNextLocation(locationName));
         Console.WriteLine();
         player.CurrentLocation.Describe();
         Console.WriteLine();

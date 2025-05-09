@@ -22,9 +22,9 @@ public abstract class Command
 	public abstract string Description { get; }
 	public abstract string Usage { get; }
 	public abstract CommandType Type { get; }
-	public abstract bool IsValid(Player player, Location location);
-	public virtual void Execute(Player player, Location location, string[] args)
+	public abstract bool IsValid(Player player);
+	public virtual void Execute(Player player, string[] args)
 	{
-		if (!IsValid(player, location)) return;
+		if (!IsValid(player)) return;
 	}
 }
