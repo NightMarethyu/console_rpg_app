@@ -31,7 +31,7 @@
 
     public override void Enter()
     {
-        Parser.Parse(player, player.CurrentLocation, "help");
+        Parser.Parse(player, "help");
     }
 
 }
