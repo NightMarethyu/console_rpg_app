@@ -10,10 +10,11 @@
         this.teleport = teleport;
     }
 
-    public override void Describe()
+    public override List<string> Describe()
     {
-        base.Describe();
-        Console.WriteLine(GameStrings.Teleport.TeleporterExists);
+        List<string> res = base.Describe();
+        res.Add(GameStrings.Teleport.TeleporterExists);
+        return res;
     }
 
     public override Location GetNextLocation(string command)

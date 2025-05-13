@@ -18,7 +18,7 @@
             options.Add(opt);
         }
 
-        InputManager.RunMenu(options);
+        InputManager.RunMenu(options, null, Info);
 
 /*        Console.Write("> ");
         String? input = Console.ReadLine();

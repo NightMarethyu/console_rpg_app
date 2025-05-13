@@ -3,10 +3,12 @@
     public bool IsRunning { get; set; } = true;
     public Scene? NextScene { get; private set; }
     public Player player { get; protected set; }
+    public List<string> Info { get; set; }
 
     public Scene(Player player)
     {
         this.player = player;
+        this.Info = new List<string>();
     }
 
     public virtual string SceneName => GetType().Name;

@@ -96,18 +96,21 @@ public class Inventory
             item.ID.Contains(partialName, StringComparison.OrdinalIgnoreCase));
     }
 
-    public void ListItems()
+    public List<string> ListItems()
     {
+        List<string> list = new List<string>();
+
         if (items.Count == 0)
         {
-            Console.WriteLine(GameStrings.Inventory.InventoryEmpty);
-            return;
+            list.Add(GameStrings.Inventory.InventoryEmpty);
+            return list;
         }
 
         foreach (Item item in items)
         {
-            Console.WriteLine("- " + item.Describe());
+            list.Add("- " + item.Describe());
         }
+        return list;
     }
 
     public bool HasItemType(ItemType type)

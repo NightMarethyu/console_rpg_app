@@ -14,6 +14,6 @@
 
     public override void Execute(Player player, string[] args)
     {
-        player.CurrentLocation.Describe();
+        SceneManager.currentScene.Info = player.CurrentLocation.Describe();
     }
 }

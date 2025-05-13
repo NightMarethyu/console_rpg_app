@@ -30,47 +30,51 @@
         Inventory = new Inventory();
     }
 
-    public virtual void Describe()
+    public virtual List<string> Describe()
     {
-        Console.WriteLine(GameStrings.LocationMsgs.BaseDescribe, name);
+        List<string> result = new List<string>();
+
+        string temp = GameStrings.LocationMsgs.BaseDescribe, name;
+        result.Add(temp);
+
         if (connected.Count > 0)
         {
-            Console.WriteLine(GameStrings.LocationMsgs.ConnectedLocals);
+            result.Add(GameStrings.LocationMsgs.ConnectedLocals);
             foreach (Location location in connected)
             {
-                Console.WriteLine(location.name);
+                result.Add(location.name);
             }
         }
         if (characters.Count > 0)
         {
-            Console.WriteLine(GameStrings.LocationMsgs.Characters);
+            result.Add(GameStrings.LocationMsgs.Characters);
             foreach (Character character in characters)
             {
-                Console.WriteLine(character.Describe());
+                result.Add(character.Describe());
             }
         }
         if (Inventory != null)
         {
-            Console.WriteLine(GameStrings.LocationMsgs.LocationItems);
+            result.Add(GameStrings.LocationMsgs.LocationItems);
             foreach (var item in Inventory.GetAllItems())
             {
                 if (item is ContainerItem container)
                 {
-                    Console.WriteLine($"- {container.Describe()}");
+                    result.Add($"- {container.Describe()}");
                     
                     if (container.IsOpen)
                     {
-                        Console.WriteLine(GameStrings.General.Contains);
-                        container.Inventory.ListItems();
+                        result.Add(GameStrings.General.Contains);
+                        result.AddRange(container.Inventory.ListItems());
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"- {item.Describe()}");
+                    result.Add($"- {item.Describe()}");
                 }
             }
         }
-        Console.WriteLine();
+        return result;
     }
 
     public virtual Location GetNextLocation(string command)
