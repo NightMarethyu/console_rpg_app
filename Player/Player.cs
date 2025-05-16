@@ -101,17 +101,14 @@ public class Player : Character
 
     public void PlayerInventory()
     {
-        Console.WriteLine(GameStrings.Inventory.PlayerInventory);
-        Inventory.ListItems();
-        Console.WriteLine(GameStrings.PlayerStrings.EquippedItems);
+        SceneManager.currentScene.Info.Add(GameStrings.Inventory.PlayerInventory);
+        SceneManager.currentScene.Info.AddRange(Inventory.ListItems());
+        SceneManager.currentScene.Info.Add(GameStrings.PlayerStrings.EquippedItems);
         foreach (KeyValuePair<EquipmentSlots, Item?> kvp in PlayerEquipment)
         {
             if (kvp.Value != null)
             {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write($"[{kvp.Key}] ");
-                Console.ResetColor();
-                Console.WriteLine(kvp.Value.Describe());
+                SceneManager.currentScene.Info.Add($"[{kvp.Key}] {kvp.Value.Describe()}");
             }
         }
     }
