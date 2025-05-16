@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\lookcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\lookcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\scenes\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:scenes\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\scenes\\explorescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:scenes\\explorescene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\opencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\opencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\inputsystem\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inputsystem\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\scenes\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:scenes\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\scenes\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:teleportlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\inventorysystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inventorysystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\scenes\\openingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:scenes\\openingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\inputsystem\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:inputsystem\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\inputsystem\\menuoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,14 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\quitcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\quitcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\opencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\opencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:commands\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\users\\ammondturner\\documents\\github\\console_rpg_app\\commands\\inventorycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -166,11 +166,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 35,
+          "SelectedChildIndex": 30,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "MenuOption.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\InputSystem\\MenuOption.cs",
               "RelativeDocumentMoniker": "InputSystem\\MenuOption.cs",
@@ -182,15 +182,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "InputManager.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\InputSystem\\InputManager.cs",
               "RelativeDocumentMoniker": "InputSystem\\InputManager.cs",
               "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\InputSystem\\InputManager.cs",
               "RelativeToolTip": "InputSystem\\InputManager.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T19:39:32.99Z"
+              "WhenOpened": "2025-04-25T19:39:32.99Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -206,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "OpeningScene.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Scenes\\OpeningScene.cs",
               "RelativeDocumentMoniker": "Scenes\\OpeningScene.cs",
@@ -272,7 +273,7 @@
               "RelativeDocumentMoniker": "Scenes\\ExploreScene.cs",
               "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Scenes\\ExploreScene.cs",
               "RelativeToolTip": "Scenes\\ExploreScene.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T03:16:52.02Z",
               "EditorCaption": ""
@@ -291,12 +292,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Scene.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Scenes\\Scene.cs",
               "RelativeDocumentMoniker": "Scenes\\Scene.cs",
-              "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Scenes\\Scene.cs*",
-              "RelativeToolTip": "Scenes\\Scene.cs*",
+              "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Scenes\\Scene.cs",
+              "RelativeToolTip": "Scenes\\Scene.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T02:51:38.607Z",
@@ -304,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "SceneManager.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Scenes\\SceneManager.cs",
               "RelativeDocumentMoniker": "Scenes\\SceneManager.cs",
@@ -389,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "TakeCommand.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\TakeCommand.cs",
               "RelativeDocumentMoniker": "Commands\\TakeCommand.cs",
@@ -437,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Inventory.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\InventorySystem\\Inventory.cs",
               "RelativeDocumentMoniker": "InventorySystem\\Inventory.cs",
@@ -450,15 +451,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 4,
               "Title": "OpenCommand.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\OpenCommand.cs",
               "RelativeDocumentMoniker": "Commands\\OpenCommand.cs",
               "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\OpenCommand.cs",
               "RelativeToolTip": "Commands\\OpenCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T01:21:36.385Z"
+              "WhenOpened": "2025-04-18T01:21:36.385Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -474,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "TeleportCommand.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\TeleportCommand.cs",
               "RelativeDocumentMoniker": "Commands\\TeleportCommand.cs",
@@ -534,20 +536,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Location.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Location.cs",
               "RelativeDocumentMoniker": "Location.cs",
               "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Location.cs",
               "RelativeToolTip": "Location.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwE0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwCQAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T06:15:56.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Player\\Player.cs",
@@ -572,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "TeleportLocation.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\TeleportLocation.cs",
               "RelativeDocumentMoniker": "TeleportLocation.cs",
@@ -597,20 +599,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LookCommand.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\LookCommand.cs",
               "RelativeDocumentMoniker": "Commands\\LookCommand.cs",
               "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\LookCommand.cs",
               "RelativeToolTip": "Commands\\LookCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T02:50:31.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Parser.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Parser.cs",
               "RelativeDocumentMoniker": "Parser.cs",
@@ -622,7 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "QuitCommand.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\QuitCommand.cs",
               "RelativeDocumentMoniker": "Commands\\QuitCommand.cs",
@@ -634,15 +636,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 3,
               "Title": "MoveCommand.cs",
               "DocumentMoniker": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\MoveCommand.cs",
               "RelativeDocumentMoniker": "Commands\\MoveCommand.cs",
               "ToolTip": "C:\\Users\\ammondturner\\Documents\\GitHub\\console_rpg_app\\Commands\\MoveCommand.cs",
               "RelativeToolTip": "Commands\\MoveCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T02:16:40.376Z"
+              "WhenOpened": "2025-04-16T02:16:40.376Z",
+              "EditorCaption": ""
             }
           ]
         }

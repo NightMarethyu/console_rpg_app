@@ -1,8 +1,8 @@
 ﻿public class Location
 {
-    private string name;
+    public string name {  get; protected set; }
     private int id;
-    private List<Location> connected;
+    public List<Location> connected { get; private set; }
     private List<Character> characters;
     public Inventory? Inventory { get; private set; }
 
@@ -34,7 +34,7 @@
     {
         List<string> result = new List<string>();
 
-        string temp = GameStrings.LocationMsgs.BaseDescribe, name;
+        string temp = string.Format(GameStrings.LocationMsgs.BaseDescribe, name);
         result.Add(temp);
 
         if (connected.Count > 0)

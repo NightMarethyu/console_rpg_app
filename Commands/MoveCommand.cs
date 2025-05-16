@@ -15,15 +15,28 @@
     public override void Execute(Player player, string[] args)
     {
         base.Execute(player, args);
-        string locationName = "";
-        for (int i = 1; i < args.Length; i++)
+
+        // TODO implement menu with InputManager. Use loop to create the MenuOptions for each location in player.CurrentLocation.connected
+
+        List<MenuOption> options = new List<MenuOption>();
+
+        foreach (Location location in player.CurrentLocation.connected)
         {
-            locationName += args[i] + " ";
+            options.Add(new MenuOption(location.name, () => player.SetLocation(location)));
         }
-        locationName = locationName.Trim();
-        player.SetLocation(player.CurrentLocation.GetNextLocation(locationName));
-        Console.WriteLine();
-        player.CurrentLocation.Describe();
-        Console.WriteLine();
+        List<string> question = new List<string>();
+        question.Add("Where would you like to move to?");
+        InputManager.RunMenu(options, null, question);
+        SceneManager.currentScene.Info = player.CurrentLocation.Describe();
+        //string locationName = "";
+        //for (int i = 1; i < args.Length; i++)
+        //{
+        //    locationName += args[i] + " ";
+        //}
+        //locationName = locationName.Trim();
+        //player.SetLocation(player.CurrentLocation.GetNextLocation(locationName));
+        //Console.WriteLine();
+        //player.CurrentLocation.Describe();
+        //Console.WriteLine();
     }
 }

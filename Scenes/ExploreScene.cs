@@ -31,7 +31,7 @@
 
     public override void Enter()
     {
-        Parser.Parse(player, "help");
+        SceneManager.currentScene.Info = player.CurrentLocation.Describe();
     }
 
 }
