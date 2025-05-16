@@ -12,7 +12,53 @@
     public override void Execute(Player player, string[] args)
     {
         base.Execute(player, args);
-        string itemName = string.Join(" ", args.Skip(1)).Trim();
+        var options = new List<MenuOption>();
+        var locationInv = player.CurrentLocation.Inventory;
+        var textOut = new List<string>();
+
+        if (locationInv != null)
+        {
+            foreach (var item in locationInv.GetAllItems().Where(i => i.IsTakeable))
+            {
+                options.Add(new MenuOption(
+                    item.Name,
+                    () =>
+                    {
+                        locationInv.RemoveItem(item);
+                        player.Inventory.AddItem(item);
+                        textOut.Add(string.Format(GameStrings.Inventory.ItemAddedToInventory, item.Name));
+                    }));
+            }
+
+            foreach (var container in locationInv.GetAllItems().OfType<ContainerItem>().Where(c => c.IsOpen))
+            {
+                foreach (var inner in container.Inventory.GetAllItems().Where(i=> i.IsTakeable))
+                {
+                    options.Add(new MenuOption(
+                        $"{inner.Name} (from {container.Name})",
+                        () =>
+                        {
+                            container.Inventory.RemoveItem(inner);
+                            player.Inventory.AddItem(inner);
+                            textOut.Add(string.Format(GameStrings.Inventory.ItemAddedToInventory, inner.Name));
+                        }));
+                }
+            }
+        }
+
+        if (options.Count == 0)
+        {
+            textOut.Add("There's nothing to take here.");
+            textOut.AddRange(player.CurrentLocation.Describe());
+            SceneManager.currentScene.Info = textOut;
+            return;
+        }
+
+        InputManager.RunMenu(options, prompt: "What would you like to take?");
+        textOut.AddRange(player.CurrentLocation.Describe());
+
+        SceneManager.currentScene.Info = textOut;
+        /*string itemName = string.Join(" ", args.Skip(1)).Trim();
 
         Item? foundItem = player.CurrentLocation.Inventory?.GetItem(itemName);
 
@@ -40,7 +86,7 @@
         else
         {
             Console.WriteLine("Can't take " + itemName);
-        }
+        }*/
     }
 
     public override bool IsValid(Player player)

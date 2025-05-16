@@ -71,6 +71,7 @@
 
     public static class LocationMsgs
     {
+        public const string MoveWhere = "Where would you like to move to?";
         public const string EnemyNotFound = "Enemy with name {0} not found in current location";
         public const string BaseDescribe = "You are currently at location {0}";
         public const string ConnectedLocals = "There are paths connected to the following locations: ";

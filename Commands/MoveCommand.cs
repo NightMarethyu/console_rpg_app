@@ -25,7 +25,7 @@
             options.Add(new MenuOption(location.name, () => player.SetLocation(location)));
         }
         List<string> question = new List<string>();
-        question.Add("Where would you like to move to?");
+        question.Add(GameStrings.LocationMsgs.MoveWhere);
         InputManager.RunMenu(options, null, question);
         SceneManager.currentScene.Info = player.CurrentLocation.Describe();
         //string locationName = "";

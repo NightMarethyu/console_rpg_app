@@ -25,6 +25,7 @@ public class OpenCommand : Command
                 }
             }
             InputManager.RunMenu(options);
+            SceneManager.currentScene.Info = player.CurrentLocation.Describe();
         }
     }
 

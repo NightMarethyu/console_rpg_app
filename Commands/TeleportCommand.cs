@@ -21,17 +21,16 @@
         if (player.CurrentLocation is TeleportLocation location)
         {
             PrintTeleportEffect();
+            Thread.Sleep(1000);
 
             Location target = location.Teleport();
             player.SetLocation(target);
 
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(GameStrings.Teleport.TeleportArrival);
-            Console.ResetColor();
-            Console.WriteLine();
+            List<string> list = new List<string>();
+            list.Add(GameStrings.Teleport.TeleportArrival);
+            SceneManager.currentScene.Info = list;
 
-            target.Describe();
+            SceneManager.currentScene.Info.AddRange(target.Describe());
         }
     }
 
