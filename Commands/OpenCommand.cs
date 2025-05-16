@@ -1,4 +1,6 @@
-﻿public class OpenCommand : Command
+﻿using System.Runtime.CompilerServices;
+
+public class OpenCommand : Command
 {
     public override string Name => "open";
 
@@ -14,10 +16,15 @@
         base.Execute(player, args);
         if (player.CurrentLocation.Inventory != null && player.CurrentLocation.Inventory.HasItemType(ItemType.Container))
         {
-            if (player.CurrentLocation.Inventory.GetItem(args[1]) is ContainerItem container)
+            List<MenuOption> options = new List<MenuOption>();
+            foreach (Item item in player.CurrentLocation.Inventory.GetAllItems())
             {
-                container.Open();
+                if (item is ContainerItem container)
+                {
+                    options.Add(new MenuOption(container.Name, () => container.Open()));
+                }
             }
+            InputManager.RunMenu(options);
         }
     }
 

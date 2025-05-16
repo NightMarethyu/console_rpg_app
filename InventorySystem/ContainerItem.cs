@@ -29,17 +29,17 @@ public class ContainerItem : Item
     {
         if (isLocked)
         {
-            Console.WriteLine(GameStrings.Container.Locked);
+            SceneManager.currentScene.Info.Add(GameStrings.Container.Locked);
             return;
         }
         if (IsOpen)
         {
-            Console.WriteLine(GameStrings.Container.Opened);
+            SceneManager.currentScene.Info.Add(GameStrings.Container.Opened);
             return;
         }
 
         State = ContainerState.Open;
-        Console.WriteLine(GameStrings.Container.OpenMessage, this.Name);
+        SceneManager.currentScene.Info.Add(string.Format(GameStrings.Container.OpenMessage, this.Name));
         Inventory.ListItems();
     }
 
@@ -49,10 +49,10 @@ public class ContainerItem : Item
         if (player.Inventory.HasItem("key"))
         {
             State = ContainerState.Open;
-            Console.WriteLine(GameStrings.Container.UnlockMessage, this.Name);
+            SceneManager.currentScene.Info.Add(string.Format(GameStrings.Container.UnlockMessage, this.Name));
             return;
         }
-        Console.WriteLine(GameStrings.Container.MissingKey);
+        SceneManager.currentScene.Info.Add(GameStrings.Container.MissingKey);
     }
 
     public override string Describe()
