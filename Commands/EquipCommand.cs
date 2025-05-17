@@ -20,7 +20,19 @@ public class EquipCommand : Command
     public override void Execute(Player player, string[] args)
     {
         base.Execute(player, args);
-        string itemName = "";
+
+        var options = new List<MenuOption>();
+
+        foreach (var item in player.Inventory.GetAllItems())
+        {
+            if (item.IsEquippable)
+            {
+                options.Add(new MenuOption(item.Name, () => player.Equip(item)));
+            }
+        }
+
+        InputManager.RunMenu(options);
+        /*string itemName = "";
         if (args.Length > 1)
         {
             itemName = string.Join(" ", args.Skip(1)).Trim();
@@ -45,6 +57,6 @@ public class EquipCommand : Command
             return;
         }
 
-        player.Equip(item);
+        player.Equip(item);*/
     }
 }

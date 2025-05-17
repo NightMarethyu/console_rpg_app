@@ -32,7 +32,7 @@ public class Player : Character
     {
         if (item == null || !item.IsEquippable || item.EquipmentSlot == null)
         {
-            Console.WriteLine(GameStrings.Inventory.NotEquippable);
+            SceneManager.currentScene.Info.Add(GameStrings.Inventory.NotEquippable);
             return;
         }
 
