@@ -101,14 +101,20 @@
         return false;
     }
 
-    public Enemy? FindFirstEnemy(string name)
+    public List<Enemy>? FindAllEnemies()
     {
-        foreach (Character enemy in characters)
+        var result = new List<Enemy>();
+        foreach (Character character in characters)
         {
-            if (enemy is Enemy && enemy.Name.ToLower() == name)
-                return (Enemy)enemy;
+            if (character is Enemy enemy)
+            {
+                result.Add(enemy);
+            }
         }
-        Console.WriteLine(GameStrings.LocationMsgs.EnemyNotFound, name);
+        if (result.Count > 0)
+        {
+            return result;
+        }
         return null;
     }
 

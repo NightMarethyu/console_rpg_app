@@ -18,7 +18,12 @@ public class AttackCommand : Command
     {
         base.Execute(player, args);
         if (player.CurrentLocation.HasEnemies()) {
-            SceneManager.SetScene(new BattleScene(player, SceneManager.currentScene, player.CurrentLocation.FindFirstEnemy(args[1])));
+            var enemies = player.CurrentLocation.FindAllEnemies();
+            if (enemies != null)
+            {
+                SceneManager.SetScene(new BattleScene(player, SceneManager.currentScene, enemies));
+            }
+            
         } else
         {
             Console.WriteLine("There's no enemy in this location");

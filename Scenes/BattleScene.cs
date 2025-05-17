@@ -2,78 +2,126 @@
 {
     Attack,
     Defend,
-    Flee
+    Flee,
+    None
 }
 
 public class BattleScene : Scene
 {
     public Scene PreviousScene { get; private set; }
     private List<string> battleLog;
-    private Enemy enemy;
+    private List<Enemy> enemies;
 
-    public BattleScene(Player player, Scene previousScene, Enemy enemy) : base(player)
+    public BattleScene(Player player, Scene previousScene, List<Enemy> enemies) : base(player)
     {
         this.PreviousScene = previousScene;
-        this.enemy = enemy;
+        this.enemies = enemies.Where(e => e.IsAlive).ToList();
         battleLog = new List<string>();
     }
 
     public override void Run()
     {
-        // Display Battle Menu
-
-        /*Console.WriteLine(GameStrings.Battle.WhatWillYouDo);
-        Console.WriteLine(GameStrings.Battle.AttackOption);
-        //Console.WriteLine(GameStrings.Battle.DefendOption);
-        //Console.WriteLine(GameStrings.Battle.UseItemOption);
-        //Console.WriteLine(GameStrings.Battle.FleeOption);
-        var key = Console.ReadKey();
-        Console.WriteLine("\n");*/
-
-        InputManager.RunMenu(new List<MenuOption>
+        while (enemies.Any(e => e.IsAlive) && player.IsAlive)
         {
-            new MenuOption(GameStrings.Battle.AttackOption, () => ResolveSpeed(CombatAction.Attack)),
-            new MenuOption(GameStrings.Battle.DefendOption, () => ResolveSpeed(CombatAction.Defend)),
-            new MenuOption(GameStrings.Battle.FleeOption, () => ResolveSpeed(CombatAction.Flee)),
-        }, GameStrings.Battle.WhatWillYouDo, battleLog);
+            var participants = new List<(Character character, int speed)>();
+            participants.Add((player, player.Speed()));
+            foreach (var enemy in enemies.Where(e => e.IsAlive))
+            {
+                participants.Add((enemy, enemy.Speed()));
+            }
+            participants = participants.OrderByDescending(p => p.speed).ToList();
 
-/*        switch (key.Key)
-        {
-            case ConsoleKey.NumPad1:
-                ResolveSpeed(CombatAction.Attack);
-                break;
-            case ConsoleKey.D1:
-                ResolveSpeed(CombatAction.Attack);
-                break;
-            *//*case ConsoleKey.NumPad2:
-                ResolveSpeed(CombatAction.Defend);
-                break;
-            case ConsoleKey.D2:
-                ResolveSpeed(CombatAction.Defend);
-                break;
-            case ConsoleKey.NumPad3:
-                break;
-            case ConsoleKey.D3:
-                break;
-            case ConsoleKey.NumPad4:
-                break;
-            case ConsoleKey.D4:
-                break;*//*
-            default:
-                Console.WriteLine(GameStrings.General.InvalidCommand);
-                break;
-        }*/
+            foreach (var participant in participants)
+            {
+                if (participant.character == player)
+                {
+                    var action = ShowPlayerMenu();
+                    if (action == CombatAction.Flee)
+                    {
+                        Console.WriteLine("You fled from battle.");
+                        IsRunning = false;
+                        return;
+                    }
+                    else if (action == CombatAction.Attack)
+                    {
+                        var target = SelectTarget();
+                        if (target != null)
+                        {
+                            ResolvePlayerAttack(player, target);
+                        }
+                    }
+                    else if (action == CombatAction.Defend)
+                    {
+                        Console.WriteLine("You defend.");
+                    }
+                }
+                else
+                {
+                    var enemy = (Enemy)participant.character;
+                    ResolveEnemyAttack(enemy, player);
+                }
+            }
 
-        Console.WriteLine(GameStrings.Battle.EndOfTurn);
-
-        if (!enemy.IsAlive)
-        {
-            foreach (string line in battleLog) { Console.WriteLine(line); }
-            Console.WriteLine(GameStrings.Battle.EnemyKilled, enemy.Name);
-            IsRunning = false;
-            PreviousScene.IsRunning = true;
-            SceneManager.SetScene(PreviousScene);
+            if (!enemies.Any(e => e.IsAlive))
+            {
+                foreach (string line in battleLog) { Console.WriteLine(line); }
+                Console.WriteLine("You have defeated all enemies.");
+                IsRunning = false;
+                PreviousScene.IsRunning = true;
+                SceneManager.SetScene(PreviousScene);
+            }
         }
+    }
+
+    private CombatAction ShowPlayerMenu()
+    {
+        CombatAction chosenAction = CombatAction.None;
+        List<MenuOption> options = new List<MenuOption>
+        {
+            new MenuOption(GameStrings.Battle.AttackOption, () => { chosenAction = CombatAction.Attack; }),
+            new MenuOption(GameStrings.Battle.DefendOption, () => { chosenAction = CombatAction.Defend; }),
+            new MenuOption(GameStrings.Battle.FleeOption, () => { chosenAction = CombatAction.Flee; }),
+        };
+        InputManager.RunMenu(options, GameStrings.Battle.WhatWillYouDo, battleLog);
+        return chosenAction;
+    }
+
+    private Enemy? SelectTarget()
+    {
+        var aliveEnemies = enemies.Where(e => e.IsAlive).ToList();
+        if (aliveEnemies.Count == 0)
+        {
+            return null;
+        }
+        Enemy? selectedEnemy = null;
+        List<MenuOption> options = new List<MenuOption>();
+        for (int i = 0; i < aliveEnemies.Count; i++)
+        {
+            int index = i;
+            options.Add(new MenuOption($"{i + 1}. {aliveEnemies[i].Name}", () => { selectedEnemy = aliveEnemies[index]; }));
+        }
+        InputManager.RunMenu(options, "Select a target:", battleLog);
+        return selectedEnemy;
+    }
+
+    private void ResolvePlayerAttack(Player player, Enemy target)
+    {
+        int attackDmg = player.AttackVal + Dice.D6();
+        target.TakeDamage(attackDmg);
+        string temp = string.Format(GameStrings.Battle.YouAttack, target.Name, attackDmg);
+        battleLog.Add(temp);
+        if (!target.IsAlive)
+        {
+            battleLog.Add($"{target.Name} has been defeated.");
+        }
+    }
+
+    private void ResolveEnemyAttack(Enemy enemy, Player player)
+    {
+        int attackDmg = enemy.AttackVal + Dice.D6();
+        player.TakeDamage(attackDmg);
+        string temp = string.Format(GameStrings.Battle.EnemyAttack, enemy.Name, attackDmg);
+        battleLog.Add(temp);
     }
 
     public override void Enter()
@@ -85,54 +133,5 @@ public class BattleScene : Scene
     public override void Exit()
     {
         IsRunning = false;
-    }
-
-    private void ResolveSpeed(CombatAction action)
-    {
-        if (player.Speed() >= enemy.Speed())
-        {
-            ResolvePlayerAction(action);
-            if (enemy.HP > 0)
-                ResolveEnemyAction();
-            else
-                enemy.Death();
-        }
-        else
-        {
-            ResolveEnemyAction();
-            if (player.HP > 0)
-            {
-                ResolvePlayerAction(action);
-            }
-            else
-            {
-                foreach (string line in battleLog) Console.WriteLine(line);
-                player.Death();
-            }
-        }
-    }
-
-    private void ResolvePlayerAction(CombatAction action)
-    {
-        switch (action)
-        {
-            case CombatAction.Attack:
-                int attackDmg = player.AttackVal + Dice.D6();
-                enemy.TakeDamage(attackDmg);
-                string temp = string.Format(GameStrings.Battle.YouAttack, attackDmg);
-                battleLog.Add(temp);
-                break;
-            case CombatAction.Defend: break;
-            case CombatAction.Flee: break;
-            default: break;
-        }
-    }
-
-    private void ResolveEnemyAction()
-    {
-        int attackDmg = enemy.AttackVal + Dice.D6();
-        player.TakeDamage(attackDmg);
-        string temp = string.Format(GameStrings.Battle.EnemyAttack, attackDmg);
-        battleLog.Add(temp);
     }
 }

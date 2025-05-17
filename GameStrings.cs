@@ -100,8 +100,8 @@
         public const string DefendOption = "2. Defend";
         public const string UseItemOption = "3. Use Item";
         public const string FleeOption = "4. Flee";
-        public const string YouAttack = "You attack the enemy for {0} damage";
-        public const string EnemyAttack = "You take {0} damage from the enemy attack";
+        public const string YouAttack = "You attack {0} for {1} damage";
+        public const string EnemyAttack = "You take {1} damage from the {0}'s attack";
         public const string EnemyKilled = "You have killed {0}";
         public const string EndOfTurn = "--- End of Turn ---";
     }
