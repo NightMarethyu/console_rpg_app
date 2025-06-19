@@ -1,80 +1,87 @@
-﻿public enum ContainerState
+﻿namespace OLD
 {
-    Closed,
-    Open,
-    Locked
-    //Trapped,
-    //Mimic
-}
 
-public class ContainerItem : Item
-{
-    public Inventory Inventory { get; private set; }
-    public ContainerState State { get; private set; } = ContainerState.Closed;
-
-    public bool IsOpen => State == ContainerState.Open;
-    public bool isLocked => State == ContainerState.Locked;
-
-    public ContainerItem(string id, string name, string description) : base(id, name, description, ItemType.Container)
+    public enum ContainerState
     {
-        this.Inventory = new Inventory();
+        Closed,
+        Open,
+        Locked
+        //Trapped,
+        //Mimic
     }
 
-    public ContainerItem(string id, string name, string description, int size) : base(id, name, description, ItemType.Container)
+    public class ContainerItem : Item
     {
-        this.Inventory = new Inventory(size);
-    }
-
-    public void Open()
-    {
-        if (isLocked)
+        public Inventory Inventory
         {
-            SceneManager.currentScene.Info.Add(GameStrings.Container.Locked);
-            return;
+            get; private set;
         }
-        if (IsOpen)
+        public ContainerState State { get; private set; } = ContainerState.Closed;
+
+        public bool IsOpen => State == ContainerState.Open;
+        public bool isLocked => State == ContainerState.Locked;
+
+        public ContainerItem(string id, string name, string description) : base(id, name, description, ItemType.Container)
         {
-            SceneManager.currentScene.Info.Add(GameStrings.Container.Opened);
-            return;
+            this.Inventory = new Inventory();
         }
 
-        State = ContainerState.Open;
-        SceneManager.currentScene.Info.Add(string.Format(GameStrings.Container.OpenMessage, this.Name));
-        Inventory.ListItems();
-    }
-
-    public void Lock() => State = ContainerState.Locked;
-    public void Unlock(Player player)
-    {
-        if (player.Inventory.HasItem("key"))
+        public ContainerItem(string id, string name, string description, int size) : base(id, name, description, ItemType.Container)
         {
+            this.Inventory = new Inventory(size);
+        }
+
+        public void Open()
+        {
+            if (isLocked)
+            {
+                SceneManager.currentScene.Info.Add(GameStrings.Container.Locked);
+                return;
+            }
+            if (IsOpen)
+            {
+                SceneManager.currentScene.Info.Add(GameStrings.Container.Opened);
+                return;
+            }
+
             State = ContainerState.Open;
-            SceneManager.currentScene.Info.Add(string.Format(GameStrings.Container.UnlockMessage, this.Name));
-            return;
+            SceneManager.currentScene.Info.Add(string.Format(GameStrings.Container.OpenMessage, this.Name));
+            Inventory.ListItems();
         }
-        SceneManager.currentScene.Info.Add(GameStrings.Container.MissingKey);
-    }
 
-    public override string Describe()
-    {
-        string baseDesc = $"{Name}: {Description}";
-
-        switch (State)
+        public void Lock() => State = ContainerState.Locked;
+        public void Unlock(Player player)
         {
-            case ContainerState.Locked:
-                return $"{baseDesc} (Locked)";
-            case ContainerState.Closed:
-                return $"{baseDesc} (Closed)";
-            case ContainerState.Open:
-                return $"{baseDesc} (Open)";
-            default:
-                return baseDesc;
+            if (player.Inventory.HasItem("key"))
+            {
+                State = ContainerState.Open;
+                SceneManager.currentScene.Info.Add(string.Format(GameStrings.Container.UnlockMessage, this.Name));
+                return;
+            }
+            SceneManager.currentScene.Info.Add(GameStrings.Container.MissingKey);
         }
-    }
 
-    public override Item Clone(int quantity)
-    {
-        Item item = new ContainerItem(ID, Name, Description);
-        return item;
+        public override string Describe()
+        {
+            string baseDesc = $"{Name}: {Description}";
+
+            switch (State)
+            {
+                case ContainerState.Locked:
+                    return $"{baseDesc} (Locked)";
+                case ContainerState.Closed:
+                    return $"{baseDesc} (Closed)";
+                case ContainerState.Open:
+                    return $"{baseDesc} (Open)";
+                default:
+                    return baseDesc;
+            }
+        }
+
+        public override Item Clone(int quantity)
+        {
+            Item item = new ContainerItem(ID, Name, Description);
+            return item;
+        }
     }
 }

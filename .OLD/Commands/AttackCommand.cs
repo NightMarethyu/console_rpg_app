@@ -1,33 +1,39 @@
 ﻿using System.Runtime.CompilerServices;
 
-public class AttackCommand : Command
+namespace OLD
 {
-    public override string Name => "attack";
-    public override string Description => GameStrings.Commands.Attack;
-    public override string Usage => GameStrings.Commands.AttackUsage;
-    public override CommandType Type => CommandType.Attack;
 
-    public override List<string> Aliases => GameStrings.Commands.AttackAliases;
-
-    public override bool IsValid(Player player)
+    public class AttackCommand : Command
     {
-        return player.CurrentLocation.HasEnemies();
-    }
+        public override string Name => "attack";
+        public override string Description => GameStrings.Commands.Attack;
+        public override string Usage => GameStrings.Commands.AttackUsage;
+        public override CommandType Type => CommandType.Attack;
 
-    public override void Execute(Player player, string[] args)
-    {
-        base.Execute(player, args);
-        if (player.CurrentLocation.HasEnemies()) {
-            var enemies = player.CurrentLocation.FindAllEnemies();
-            if (enemies != null)
-            {
-                SceneManager.SetScene(new BattleScene(player, SceneManager.currentScene, enemies));
-            }
-            
-        } else
+        public override List<string> Aliases => GameStrings.Commands.AttackAliases;
+
+        public override bool IsValid(Player player)
         {
-            Console.WriteLine("There's no enemy in this location");
-            return;
+            return player.CurrentLocation.HasEnemies();
+        }
+
+        public override void Execute(Player player, string[] args)
+        {
+            base.Execute(player, args);
+            if (player.CurrentLocation.HasEnemies())
+            {
+                var enemies = player.CurrentLocation.FindAllEnemies();
+                if (enemies != null)
+                {
+                    SceneManager.SetScene(new BattleScene(player, SceneManager.currentScene, enemies));
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("There's no enemy in this location");
+                return;
+            }
         }
     }
 }

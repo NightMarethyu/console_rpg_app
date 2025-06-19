@@ -1,4 +1,7 @@
-﻿Player player = new Player();
+﻿namespace OLD
+{
+
+Player player = new Player();
 Enemy enemy = new Enemy();
 CommandManager.Initialize();
 ItemFactory.LoadItemsFromJSON("items.json");
@@ -45,3 +48,4 @@ loc4.Describe();
 
 SceneManager.SetScene(new ExploreScene(player));
 SceneManager.RunCurrentScene();
+}

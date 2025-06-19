@@ -1,4 +1,7 @@
-﻿public class WeaponItem : Item
+﻿namespace OLD
+{
+}
+public class WeaponItem : Item
 {
     public int AttackValue { get; private set; }
 
@@ -17,4 +20,4 @@
     {
         return new WeaponItem(ID, Name, Description, Value ?? 0, AttackValue) { Quantity = q };
     }
-}
+}}

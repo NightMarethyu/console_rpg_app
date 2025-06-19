@@ -1,11 +1,21 @@
-﻿public class MenuOption
+﻿namespace OLD
 {
-    public string Label {  get; set; }
-    public Action Action { get; set; }
 
-    public MenuOption(string label, Action action)
+    public class MenuOption
     {
-        Label = label;
-        Action = action;
+        public string Label
+        {
+            get; set;
+        }
+        public Action Action
+        {
+            get; set;
+        }
+
+        public MenuOption(string label, Action action)
+        {
+            Label = label;
+            Action = action;
+        }
     }
 }

@@ -1,37 +1,40 @@
-﻿public class ExploreScene : Scene
+﻿namespace OLD
 {
-    public ExploreScene(Player play) : base(play) { }
-
-    public override void Run()
+    public class ExploreScene : Scene
     {
-        var validCommands = CommandManager.Commands
-            .Where(command => command.IsValid(player))
-            .OrderBy(cmd => cmd.Name)
-            .ToList();
+        public ExploreScene(Player play) : base(play) { }
 
-        List<MenuOption> options = new List<MenuOption>();
-
-        foreach (var command in validCommands)
+        public override void Run()
         {
-            string[] temp = ["temp"];
-            MenuOption opt = new MenuOption(command.Name, () => command.Execute(player, temp));
-            options.Add(opt);
+            var validCommands = CommandManager.Commands
+                .Where(command => command.IsValid(player))
+                .OrderBy(cmd => cmd.Name)
+                .ToList();
+
+            List<MenuOption> options = new List<MenuOption>();
+
+            foreach (var command in validCommands)
+            {
+                string[] temp = ["temp"];
+                MenuOption opt = new MenuOption(command.Name, () => command.Execute(player, temp));
+                options.Add(opt);
+            }
+
+            InputManager.RunMenu(options, null, Info);
+
+            /*        Console.Write("> ");
+                    String? input = Console.ReadLine();
+
+                    if (input != null)
+                    {
+                        Parser.Parse(player, player.CurrentLocation, input);
+                    }*/
         }
 
-        InputManager.RunMenu(options, null, Info);
-
-/*        Console.Write("> ");
-        String? input = Console.ReadLine();
-
-        if (input != null)
+        public override void Enter()
         {
-            Parser.Parse(player, player.CurrentLocation, input);
-        }*/
-    }
+            SceneManager.currentScene.Info = player.CurrentLocation.Describe();
+        }
 
-    public override void Enter()
-    {
-        SceneManager.currentScene.Info = player.CurrentLocation.Describe();
     }
-
 }

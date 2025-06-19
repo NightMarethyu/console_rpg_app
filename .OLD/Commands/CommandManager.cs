@@ -1,21 +1,25 @@
-﻿public static class CommandManager
+﻿namespace OLD
 {
-    public static List<Command> Commands { get; private set; } = new List<Command>();
-    public static void Initialize()
+
+    public static class CommandManager
     {
-        Commands.Add(new HelpCommand());
-        Commands.Add(new MoveCommand());
-        Commands.Add(new LookCommand());
-        Commands.Add(new OpenCommand());
-        Commands.Add(new InventoryCommand());
-        Commands.Add(new TakeCommand());
-        Commands.Add(new DropCommand());
-        Commands.Add(new EquipCommand());
-        //Commands.Add(new UseCommand());
-        //Commands.Add(new TalkCommand());
-        Commands.Add(new AttackCommand());
-        //Commands.Add(new FleeCommand());
-        Commands.Add(new QuitCommand());
-        Commands.Add(new TeleportCommand());
+        public static List<Command> Commands { get; private set; } = new List<Command>();
+        public static void Initialize()
+        {
+            Commands.Add(new HelpCommand());
+            Commands.Add(new MoveCommand());
+            Commands.Add(new LookCommand());
+            Commands.Add(new OpenCommand());
+            Commands.Add(new InventoryCommand());
+            Commands.Add(new TakeCommand());
+            Commands.Add(new DropCommand());
+            Commands.Add(new EquipCommand());
+            //Commands.Add(new UseCommand());
+            //Commands.Add(new TalkCommand());
+            Commands.Add(new AttackCommand());
+            //Commands.Add(new FleeCommand());
+            Commands.Add(new QuitCommand());
+            Commands.Add(new TeleportCommand());
+        }
     }
 }

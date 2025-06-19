@@ -1,62 +1,65 @@
-﻿
-public class EquipCommand : Command
+﻿namespace OLD
 {
-    public override string Name => "equip";
 
-    public override string Description => GameStrings.Commands.Equip;
-
-    public override string Usage => GameStrings.Commands.EquipUsage;
-
-    public override CommandType Type => CommandType.Equip;
-
-    public override List<string> Aliases => GameStrings.Commands.EquipAliases;
-
-    public override bool IsValid(Player player)
+    public class EquipCommand : Command
     {
-        List<Item> items = player.Inventory.GetAllItems();
-        return items.Any(item => item.IsEquippable);
-    }
+        public override string Name => "equip";
 
-    public override void Execute(Player player, string[] args)
-    {
-        base.Execute(player, args);
+        public override string Description => GameStrings.Commands.Equip;
 
-        var options = new List<MenuOption>();
+        public override string Usage => GameStrings.Commands.EquipUsage;
 
-        foreach (var item in player.Inventory.GetAllItems())
+        public override CommandType Type => CommandType.Equip;
+
+        public override List<string> Aliases => GameStrings.Commands.EquipAliases;
+
+        public override bool IsValid(Player player)
         {
-            if (item.IsEquippable)
+            List<Item> items = player.Inventory.GetAllItems();
+            return items.Any(item => item.IsEquippable);
+        }
+
+        public override void Execute(Player player, string[] args)
+        {
+            base.Execute(player, args);
+
+            var options = new List<MenuOption>();
+
+            foreach (var item in player.Inventory.GetAllItems())
             {
-                options.Add(new MenuOption(item.Name, () => player.Equip(item)));
+                if (item.IsEquippable)
+                {
+                    options.Add(new MenuOption(item.Name, () => player.Equip(item)));
+                }
             }
-        }
 
-        InputManager.RunMenu(options);
-        /*string itemName = "";
-        if (args.Length > 1)
-        {
-            itemName = string.Join(" ", args.Skip(1)).Trim();
-        }
-        if (itemName == "") 
-        {
-            Console.WriteLine(GameStrings.Inventory.ItemNotFound);
-            return; 
-        }
+            InputManager.RunMenu(options);
+            /*string itemName = "";
+            if (args.Length > 1)
+            {
+                itemName = string.Join(" ", args.Skip(1)).Trim();
+            }
+            if (itemName == "") 
+            {
+                Console.WriteLine(GameStrings.Inventory.ItemNotFound);
+                return; 
+            }
 
-        Item? item = player.Inventory.GetItem(itemName);
+            Item? item = player.Inventory.GetItem(itemName);
 
-        if (item == null)
-        {
-            Console.WriteLine(GameStrings.Inventory.ItemNotFound);
-            return;
+            if (item == null)
+            {
+                Console.WriteLine(GameStrings.Inventory.ItemNotFound);
+                return;
+            }
+
+            if (!item.IsEquippable)
+            {
+                Console.WriteLine(GameStrings.Inventory.NotEquippable);
+                return;
+            }
+
+            player.Equip(item);*/
         }
-
-        if (!item.IsEquippable)
-        {
-            Console.WriteLine(GameStrings.Inventory.NotEquippable);
-            return;
-        }
-
-        player.Equip(item);*/
     }
 }

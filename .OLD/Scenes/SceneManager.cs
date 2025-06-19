@@ -1,29 +1,36 @@
-﻿public static class SceneManager
+﻿namespace OLD
 {
-    public static Scene? currentScene {  get; private set; }
 
-    public static void SetScene(Scene newScene)
+    public static class SceneManager
     {
-        if (currentScene != null)
+        public static Scene? currentScene
         {
-            currentScene.Exit();
+            get; private set;
         }
-        currentScene = newScene;
-        currentScene.Enter();
-    }
 
-    public static void RunCurrentScene()
-    {
-        if (currentScene != null)
+        public static void SetScene(Scene newScene)
         {
-            while (currentScene.IsRunning)
+            if (currentScene != null)
             {
-                currentScene.Run();
+                currentScene.Exit();
             }
-        } 
-        else
+            currentScene = newScene;
+            currentScene.Enter();
+        }
+
+        public static void RunCurrentScene()
         {
-            Console.WriteLine(GameStrings.ErrorMsgs.NoScene);
+            if (currentScene != null)
+            {
+                while (currentScene.IsRunning)
+                {
+                    currentScene.Run();
+                }
+            }
+            else
+            {
+                Console.WriteLine(GameStrings.ErrorMsgs.NoScene);
+            }
         }
     }
 }

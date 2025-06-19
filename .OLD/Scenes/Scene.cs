@@ -1,28 +1,41 @@
-﻿public abstract class Scene
+﻿namespace OLD
 {
-    public bool IsRunning { get; set; } = true;
-    public Scene? NextScene { get; private set; }
-    public Player player { get; protected set; }
-    public List<string> Info { get; set; }
 
-    public Scene(Player player)
+    public abstract class Scene
     {
-        this.player = player;
-        this.Info = new List<string>();
-    }
+        public bool IsRunning { get; set; } = true;
+        public Scene? NextScene
+        {
+            get; private set;
+        }
+        public Player player
+        {
+            get; protected set;
+        }
+        public List<string> Info
+        {
+            get; set;
+        }
 
-    public virtual string SceneName => GetType().Name;
+        public Scene(Player player)
+        {
+            this.player = player;
+            this.Info = new List<string>();
+        }
 
-    public abstract void Run();
+        public virtual string SceneName => GetType().Name;
 
-    public virtual void Enter()
-    {
-        Console.WriteLine(GameStrings.SceneMsgs.EnterScene);
-    }
+        public abstract void Run();
 
-    public virtual void Exit()
-    {
-        Console.WriteLine(GameStrings.SceneMsgs.ExitScene);
-        IsRunning = false;
+        public virtual void Enter()
+        {
+            Console.WriteLine(GameStrings.SceneMsgs.EnterScene);
+        }
+
+        public virtual void Exit()
+        {
+            Console.WriteLine(GameStrings.SceneMsgs.ExitScene);
+            IsRunning = false;
+        }
     }
 }

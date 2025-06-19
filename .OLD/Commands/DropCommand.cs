@@ -1,62 +1,69 @@
-﻿public class DropCommand : Command
+﻿namespace OLD
 {
-    public override string Name => "drop";
 
-    public override string Description => GameStrings.Commands.Drop;
-
-    public override string Usage => GameStrings.Commands.DropUsage;
-    public override CommandType Type => CommandType.Drop;
-    public override List<string> Aliases => GameStrings.Commands.DropAliases;
-
-
-    public override void Execute(Player player, string[] args)
+    public class DropCommand : Command
     {
-        base.Execute(player, args);
-        Item? item = player.Inventory.GetItem(args[1]);
-        if (item != null && item.Type != ItemType.Quest)
+        public override string Name => "drop";
+
+        public override string Description => GameStrings.Commands.Drop;
+
+        public override string Usage => GameStrings.Commands.DropUsage;
+        public override CommandType Type => CommandType.Drop;
+        public override List<string> Aliases => GameStrings.Commands.DropAliases;
+
+
+        public override void Execute(Player player, string[] args)
         {
-            if (item != null && item.IsStackable)
+            base.Execute(player, args);
+            Item? item = player.Inventory.GetItem(args[1]);
+            if (item != null && item.Type != ItemType.Quest)
             {
-                if (args.Length > 2)
+                if (item != null && item.IsStackable)
                 {
-                    try
+                    if (args.Length > 2)
                     {
-                        int quantity = int.Parse(args[2]);
-                        if (item.Quantity >= quantity)
+                        try
                         {
-                            var droppedItem = ItemFactory.Create(item.ID, quantity);
-                            item.Quantity -= quantity;
-                            if (player.CurrentLocation.Inventory == null) { player.CurrentLocation.AddInventory(); }
-                            player.CurrentLocation.Inventory.AddItem(droppedItem);
+                            int quantity = int.Parse(args[2]);
+                            if (item.Quantity >= quantity)
+                            {
+                                var droppedItem = ItemFactory.Create(item.ID, quantity);
+                                item.Quantity -= quantity;
+                                if (player.CurrentLocation.Inventory == null)
+                                {
+                                    player.CurrentLocation.AddInventory();
+                                }
+                                player.CurrentLocation.Inventory.AddItem(droppedItem);
+                            }
+                            else
+                            {
+                                Console.WriteLine(GameStrings.Inventory.NotEnoughQuantity);
+                            }
                         }
-                        else
+                        catch (Exception)
                         {
-                            Console.WriteLine(GameStrings.Inventory.NotEnoughQuantity);
+                            Console.WriteLine(GameStrings.Commands.DropUsage);
+                            throw;
                         }
+
                     }
-                    catch (Exception)
-                    {
-                        Console.WriteLine(GameStrings.Commands.DropUsage);
-                        throw;
-                    }
-                    
                 }
-            } 
-            else 
+                else
+                {
+                    player.Inventory.RemoveItem(item);
+                    player.CurrentLocation.Inventory?.AddItem(item);
+                    Console.WriteLine(GameStrings.Inventory.YouDroppedItem, item.Name);
+                }
+            }
+            else
             {
-                player.Inventory.RemoveItem(item);
-                player.CurrentLocation.Inventory?.AddItem(item);
-                Console.WriteLine(GameStrings.Inventory.YouDroppedItem, item.Name);
+                Console.WriteLine(GameStrings.Inventory.QuestItemDropWarning);
             }
         }
-        else
-        {
-            Console.WriteLine(GameStrings.Inventory.QuestItemDropWarning);
-        }
-    }
 
-    public override bool IsValid(Player player)
-    {
-        return player.Inventory.IsNotEmpty();
+        public override bool IsValid(Player player)
+        {
+            return player.Inventory.IsNotEmpty();
+        }
     }
 }

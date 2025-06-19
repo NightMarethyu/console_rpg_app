@@ -12,9 +12,47 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="items.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+      <None Include=".OLD\Character.cs" />
+      <Compile Include=".OLD\Commands\AttackCommand.cs" />
+      <Compile Include=".OLD\Commands\Command.cs" />
+      <Compile Include=".OLD\Commands\CommandManager.cs" />
+      <Compile Include=".OLD\Commands\DropCommand.cs" />
+      <Compile Include=".OLD\Commands\EquipCommand.cs" />
+      <Compile Include=".OLD\Commands\HelpCommand.cs" />
+      <Compile Include=".OLD\Commands\InventoryCommand.cs" />
+      <Compile Include=".OLD\Commands\LookCommand.cs" />
+      <Compile Include=".OLD\Commands\MoveCommand.cs" />
+      <Compile Include=".OLD\Commands\OpenCommand.cs" />
+      <Compile Include=".OLD\Commands\QuitCommand.cs" />
+      <Compile Include=".OLD\Commands\TakeCommand.cs" />
+      <Compile Include=".OLD\Commands\TeleportCommand.cs" />
+      <Compile Include=".OLD\Enemies\Enemy.cs" />
+      <None Include=".OLD\GameStrings.cs" />
+      <Compile Include=".OLD\InputSystem\InputManager.cs" />
+      <Compile Include=".OLD\InputSystem\MenuOption.cs" />
+      <Compile Include=".OLD\InventorySystem\ArmorItem.cs" />
+      <Compile Include=".OLD\InventorySystem\BasicItem.cs" />
+      <Compile Include=".OLD\InventorySystem\ContainerItem.cs" />
+      <Compile Include=".OLD\InventorySystem\Inventory.cs" />
+      <Compile Include=".OLD\InventorySystem\Item.cs" />
+      <Compile Include=".OLD\InventorySystem\ItemData.cs" />
+      <Compile Include=".OLD\InventorySystem\ItemFactory.cs" />
+      <Compile Include=".OLD\InventorySystem\WeaponItem.cs" />
+      <None Include=".OLD\Location.cs" />
+      <None Include=".OLD\OldProgram.cs" />
+      <None Include=".OLD\Parser.cs" />
+      <Compile Include=".OLD\Player\Player.cs" />
+      <Compile Include=".OLD\Scenes\BattleScene.cs" />
+      <None Include=".OLD\Scenes\EndingScene.cs" />
+      <None Include=".OLD\Scenes\ExploreScene.cs" />
+      <None Include=".OLD\Scenes\OpeningScene.cs" />
+      <None Include=".OLD\Scenes\Scene.cs" />
+      <None Include=".OLD\Scenes\SceneManager.cs" />
+      <None Include=".OLD\TeleportLocation.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include=".OLD\items.json" />
     </ItemGroup>
 
 </Project>

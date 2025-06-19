@@ -1,116 +1,125 @@
-﻿public enum EquipmentSlots
+﻿namespace OLD
 {
-    Head,
-    Chest,
-    Legs,
-    Feet,
-    Hands,
-    MainHand,
-    OffHand,
-    Ring,
-    Amulet,
-    Cloak,
-    Belt
-}
 
-public class Player : Character
-{
-	public Dictionary<EquipmentSlots, Item?> PlayerEquipment = new Dictionary<EquipmentSlots, Item?>();
-
-	public Player() : base()
-	{
-		this.Name = "Player Character";
-		this.HP = 100;
-		this.AttackVal = 5;
-	}
-
-	public Player(string name) : this() { this.Name = name; }
-
-	public void Attack(Character en) { en.TakeDamage(this.AttackVal); }
-
-    public void Equip(Item item)
+    public enum EquipmentSlots
     {
-        if (item == null || !item.IsEquippable || item.EquipmentSlot == null)
+        Head,
+        Chest,
+        Legs,
+        Feet,
+        Hands,
+        MainHand,
+        OffHand,
+        Ring,
+        Amulet,
+        Cloak,
+        Belt
+    }
+
+    public class Player : Character
+    {
+        public Dictionary<EquipmentSlots, Item?> PlayerEquipment = new Dictionary<EquipmentSlots, Item?>();
+
+        public Player() : base()
         {
-            SceneManager.currentScene.Info.Add(GameStrings.Inventory.NotEquippable);
-            return;
+            this.Name = "Player Character";
+            this.HP = 100;
+            this.AttackVal = 5;
         }
 
-        var slot = item.EquipmentSlot.Value;
+        public Player(string name) : this() { this.Name = name; }
 
-        if (PlayerEquipment.ContainsKey(slot) && PlayerEquipment[slot] != null)
+        public void Attack(Character en)
         {
-            Item unequipped = PlayerEquipment[slot];
-            RemoveItemEffects(unequipped);
-            Inventory.AddItem(unequipped);
+            en.TakeDamage(this.AttackVal);
         }
 
-        PlayerEquipment[slot] = item;
-        Inventory.RemoveItem(item);
-        ApplyItemEffects(item);
-    }
-
-    public override void SetLocation(Location location)
-    {
-        if (location != null)
-            this.CurrentLocation = location;
-        else
-            throw new ArgumentException("Location not found!");
-    }
-
-    public override void Death()
-    {
-        base.Death();
-        Console.WriteLine(GameStrings.General.YouHaveDied);
-        Console.WriteLine(GameStrings.General.GameOver);
-        Thread.Sleep(2000);
-        Environment.Exit(0);
-    }
-
-    private void ApplyItemEffects(Item item)
-    {
-        switch (item)
+        public void Equip(Item item)
         {
-            case WeaponItem weapon:
-                AttackVal += weapon.AttackValue;
-                break;
-            case ArmorItem armor:
-                ArmorValue += armor.DefenseValue;
-                break;
-            default:
-                if (item is IItemEffect effectItem) effectItem.Apply(this);
-                break;
-        }
-    }
-
-    private void RemoveItemEffects(Item item)
-    {
-        switch (item)
-        {
-            case WeaponItem weapon:
-                AttackVal -= weapon.AttackValue;
-                break;
-            case ArmorItem armor:
-                ArmorValue -= armor.DefenseValue;
-                break;
-            default:
-                if (item is IItemEffect effectItem) effectItem.Remove(this);
-                break;
-        }
-    }
-
-    public void PlayerInventory()
-    {
-        SceneManager.currentScene.Info.Add(GameStrings.Inventory.PlayerInventory);
-        SceneManager.currentScene.Info.AddRange(Inventory.ListItems());
-        SceneManager.currentScene.Info.Add(GameStrings.PlayerStrings.EquippedItems);
-        foreach (KeyValuePair<EquipmentSlots, Item?> kvp in PlayerEquipment)
-        {
-            if (kvp.Value != null)
+            if (item == null || !item.IsEquippable || item.EquipmentSlot == null)
             {
-                SceneManager.currentScene.Info.Add($"[{kvp.Key}] {kvp.Value.Describe()}");
+                SceneManager.currentScene.Info.Add(GameStrings.Inventory.NotEquippable);
+                return;
+            }
+
+            var slot = item.EquipmentSlot.Value;
+
+            if (PlayerEquipment.ContainsKey(slot) && PlayerEquipment[slot] != null)
+            {
+                Item unequipped = PlayerEquipment[slot];
+                RemoveItemEffects(unequipped);
+                Inventory.AddItem(unequipped);
+            }
+
+            PlayerEquipment[slot] = item;
+            Inventory.RemoveItem(item);
+            ApplyItemEffects(item);
+        }
+
+        public override void SetLocation(Location location)
+        {
+            if (location != null)
+                this.CurrentLocation = location;
+            else
+                throw new ArgumentException("Location not found!");
+        }
+
+        public override void Death()
+        {
+            base.Death();
+            Console.WriteLine(GameStrings.General.YouHaveDied);
+            Console.WriteLine(GameStrings.General.GameOver);
+            Thread.Sleep(2000);
+            Environment.Exit(0);
+        }
+
+        private void ApplyItemEffects(Item item)
+        {
+            switch (item)
+            {
+                case WeaponItem weapon:
+                    AttackVal += weapon.AttackValue;
+                    break;
+                case ArmorItem armor:
+                    ArmorValue += armor.DefenseValue;
+                    break;
+                default:
+                    if (item is IItemEffect effectItem)
+                        effectItem.Apply(this);
+                    break;
             }
         }
-    }
 
+        private void RemoveItemEffects(Item item)
+        {
+            switch (item)
+            {
+                case WeaponItem weapon:
+                    AttackVal -= weapon.AttackValue;
+                    break;
+                case ArmorItem armor:
+                    ArmorValue -= armor.DefenseValue;
+                    break;
+                default:
+                    if (item is IItemEffect effectItem)
+                        effectItem.Remove(this);
+                    break;
+            }
+        }
+
+        public void PlayerInventory()
+        {
+            SceneManager.currentScene.Info.Add(GameStrings.Inventory.PlayerInventory);
+            SceneManager.currentScene.Info.AddRange(Inventory.ListItems());
+            SceneManager.currentScene.Info.Add(GameStrings.PlayerStrings.EquippedItems);
+            foreach (KeyValuePair<EquipmentSlots, Item?> kvp in PlayerEquipment)
+            {
+                if (kvp.Value != null)
+                {
+                    SceneManager.currentScene.Info.Add($"[{kvp.Key}] {kvp.Value.Describe()}");
+                }
+            }
+        }
+
+    }
 }
