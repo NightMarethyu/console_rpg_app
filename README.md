@@ -4,6 +4,10 @@ A text-based adventure RPG — explore ancient dungeons, survive deadly encounte
 
 > Built in C# — designed as a job-ready portfolio project.
 
+### _Developer's Note_
+
+I set this project aside a little bit ago and I'm coming back to it now. I began to implement a new menu system and as I was implementing it I found that I needed more and more refactoring. Every time I started refactoring to implement the new menu, I had to make changes to even more files. It was getting out of hand and making me frustrated. At the same time, I was thinking of the different things I wanted to implement, that would require more refactoring, after I was done with implementing the new menues. All that made me discouraged and I set this project aside. Now, I've decided I'm going to come back to it again. I've decided that I'm going to start over somewhat. I've moved most of the code to the .OLD folder, I want to refer to it but I don't want it cluttering up what I plan on doing. I haven't given up, I'm just going to take a new approach, using what I've learned with the previous implementation, and build out something that will be more robust and hopefully easier to maintain.
+
 ---
 
 ## 💡 Project Goals
