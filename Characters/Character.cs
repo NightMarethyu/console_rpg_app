@@ -1,5 +1,6 @@
 ﻿public abstract class Character
 {
+    public Guid Id { get; protected set; }
     public string Name { get; protected set; }
     public int CurrentHP { get; protected set; }
     public int MaxHP { get; protected set; }
@@ -13,6 +14,7 @@
 
     public Character()
     {
+        this.Id = Guid.NewGuid();
         this.Name = string.Empty;
         this.MaxHP = 0;
         this.CurrentHP = 0;
