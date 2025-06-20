@@ -21,7 +21,7 @@ I set this project aside a little bit ago and I'm coming back to it now. I began
 
 ## 🔧 Features
 
-- 🧙 Character creation with random backgrounds, traits, and inventory (WIP)
+- 🧙 Character creation with backgrounds, traits, and inventory (WIP)
 - 🌍 Procedural world generation (terrain, weather, POIs) (WIP)
 - 🚶 Explore the world, make decisions, face challenges (WIP)
 - ⚔️ Deadly combat system with scars and perma-death (WIP)

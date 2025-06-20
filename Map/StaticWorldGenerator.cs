@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace console_rpg_app.Map
+﻿
+public class StaticWorldGenerator : IWorldGenerator
 {
-    internal class StaticWorldGenerator
+    public Dictionary<Guid, Location> GenerateWorld()
     {
+        Dictionary<Guid, Location> theMap = new Dictionary<Guid, Location>();
+        // TODO Add several locations for MVP build
+        return theMap;
     }
 }

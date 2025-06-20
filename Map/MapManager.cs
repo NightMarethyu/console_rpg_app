@@ -1,9 +1,9 @@
 ﻿public class MapManager
 {
-    public Dictionary<Guid, Location> Locations = new Dictionary<Guid, Location>();
+    public Dictionary<Guid, Location> Locations { get; private set; }
 
-    public MapManager()
+    public MapManager(IWorldGenerator worldGenerator)
     {
-
+        Locations = worldGenerator.GenerateWorld();
     }
 }
