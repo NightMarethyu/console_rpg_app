@@ -1,0 +1,1 @@
+﻿public record WorldGenerationResult(Dictionary<Guid, Location> Locations, Guid StartingLocationID);

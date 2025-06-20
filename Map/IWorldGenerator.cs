@@ -1,4 +1,4 @@
 ﻿public interface IWorldGenerator
 {
-    Dictionary<Guid, Location> GenerateWorld();
+    WorldGenerationResult GenerateWorld();
 }
