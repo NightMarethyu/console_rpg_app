@@ -4,17 +4,18 @@
     public string Name { get; protected set; }
     private List<Guid> ExitIDs = new List<Guid>();
     private List<Character> Characters = new List<Character>();
+    public HashSet<string> Tags { get; protected set; }
     //private Invetory Inventory; TODO Implement Inventory
 
     public Location()
     {
         Id = Guid.NewGuid();
         Name = string.Empty;
+        Tags = new HashSet<string>();
     }
 
-    public Location(string Name)
+    public Location(string Name) : this()
     {
-        Id = Guid.NewGuid();
         this.Name = Name;
     }
 
@@ -31,5 +32,10 @@
     public void AddExit(Guid exitID)
     {
         ExitIDs.Add(exitID);
+    }
+
+    public void AddTag(string tag)
+    {
+        Tags.Add(tag); 
     }
 }
