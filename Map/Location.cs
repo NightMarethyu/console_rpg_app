@@ -1,7 +1,8 @@
 ﻿public class Location
 {
+    public Guid Id { get; protected set; }
     public string Name { get; protected set; }
-    public List<Location> Exits = new List<Location>();
+    public List<Guid> ExitIDs = new List<Guid>();
     private List<Character> Characters = new List<Character>();
     //private Invetory Inventory; TODO Implement Inventory
 
