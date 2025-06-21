@@ -2,5 +2,5 @@
 {
     public const string StartingLocation = "Starting Location";
     public const string Path = "Path";
-    public const string SafeZone = "SafeZone";
+    public const string SafeZone = "Safe Zone";
 }
