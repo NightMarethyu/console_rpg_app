@@ -1,190 +1,19 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\CodeBase\\console_rpg_app\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\map\\staticworldgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:map\\staticworldgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\map\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:map\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\map\\locationtags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:map\\locationtags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\characters\\characterfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:characters\\characterfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\characters\\charactertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:characters\\charactertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\characters\\charactertags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:characters\\charactertags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\characters\\nonhostilenpcs\\villager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:characters\\nonhostilenpcs\\villager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\characters\\enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:characters\\enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|c:\\codebase\\console_rpg_app\\characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE01218F-21CC-4A31-81E5-31A60A3E1CE9}|console_rpg_app.csproj|solutionrelative:characters\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 157,
+      "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LocationTags.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Map\\LocationTags.cs",
-              "RelativeDocumentMoniker": "Map\\LocationTags.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Map\\LocationTags.cs",
-              "RelativeToolTip": "Map\\LocationTags.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T04:30:06.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CharacterFactory.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Characters\\CharacterFactory.cs",
-              "RelativeDocumentMoniker": "Characters\\CharacterFactory.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Characters\\CharacterFactory.cs",
-              "RelativeToolTip": "Characters\\CharacterFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T03:59:02.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CharacterType.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Characters\\CharacterType.cs",
-              "RelativeDocumentMoniker": "Characters\\CharacterType.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Characters\\CharacterType.cs",
-              "RelativeToolTip": "Characters\\CharacterType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T03:58:33.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Villager.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Characters\\NonHostileNPCs\\Villager.cs",
-              "RelativeDocumentMoniker": "Characters\\NonHostileNPCs\\Villager.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Characters\\NonHostileNPCs\\Villager.cs",
-              "RelativeToolTip": "Characters\\NonHostileNPCs\\Villager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T03:56:09.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Characters\\Enemies\\Enemy.cs",
-              "RelativeDocumentMoniker": "Characters\\Enemies\\Enemy.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Characters\\Enemies\\Enemy.cs",
-              "RelativeToolTip": "Characters\\Enemies\\Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T03:54:40.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CharacterTags.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Characters\\CharacterTags.cs",
-              "RelativeDocumentMoniker": "Characters\\CharacterTags.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Characters\\CharacterTags.cs",
-              "RelativeToolTip": "Characters\\CharacterTags.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T03:53:04.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Characters\\Player\\Player.cs",
-              "RelativeDocumentMoniker": "Characters\\Player\\Player.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Characters\\Player\\Player.cs",
-              "RelativeToolTip": "Characters\\Player\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T03:49:47.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StaticWorldGenerator.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Map\\StaticWorldGenerator.cs",
-              "RelativeDocumentMoniker": "Map\\StaticWorldGenerator.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Map\\StaticWorldGenerator.cs",
-              "RelativeToolTip": "Map\\StaticWorldGenerator.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T03:08:18.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Location.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Map\\Location.cs",
-              "RelativeDocumentMoniker": "Map\\Location.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Map\\Location.cs",
-              "RelativeToolTip": "Map\\Location.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T03:46:26.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\CodeBase\\console_rpg_app\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\CodeBase\\console_rpg_app\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:49:07.955Z",
-              "EditorCaption": ""
             }
           ]
         }
