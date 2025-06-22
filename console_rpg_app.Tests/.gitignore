@@ -1,0 +1,65 @@
+## Ignore Visual Studio temporary files, build results, and
+## user-specific files
+
+# Build results
+[Bb]in/
+[Oo]bj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# ASP.NET
+*.log
+*.vspscc
+*.vssscc
+*.publish.xml
+*.dbmdl
+
+# Visual Studio files
+.vs/
+.vscode/
+
+# Rider files (optional, in case you use JetBrains Rider)
+.idea/
+
+# NuGet packages
+*.nupkg
+packages/
+# Uncomment the next line if you do not want to store the nuget packages folder
+# **/packages/*
+
+# Microsoft Azure Web App publish settings
+PublishProfiles/
+
+# Resharper (optional)
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# DotCover
+*.dotCover
+
+# Backup & Reports
+*.bak
+*.report
+
+# Others
+*.cache
+*.pidb
+*.sln.cache
+*.mdb
+*.opendb
+
+# JetBrains Rider specific
+.idea/
+*.sln.iml
