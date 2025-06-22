@@ -10,6 +10,7 @@
     public int Wisdom { get; protected set; }
     public int ArmorValue { get; protected set; }
     public int AttackValue { get; protected set; }
+    public HashSet<string> Tags = new HashSet<string>();
     //public Inventory Inventory { get; protected set; } // TODO implement Inventory class
 
     public Character()
@@ -22,6 +23,20 @@
         this.Dexterity = Dice.D(6, 3);
         this.Wisdom = Dice.D(6, 3);
         this.ArmorValue = 0;
+    }
+
+    public Character(Guid id, string name, int currentHP, int maxHP, bool isAlive, int strength, int dexterity, int wisdom, int armorValue, int attackValue, HashSet<string> tags)
+    {
+        this.Id = id;
+        this.Name = name;
+        this.CurrentHP = currentHP;
+        this.MaxHP = maxHP;
+        this.Strength = strength;
+        this.Dexterity = dexterity;
+        this.Wisdom = wisdom;
+        this.ArmorValue = armorValue;
+        this.AttackValue = attackValue;
+        this.Tags = tags;
     }
 
     public void TakeDamage(int damage) 
