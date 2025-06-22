@@ -2,8 +2,8 @@
 ## user-specific files
 
 # Build results
-[Bb]in/
-[Oo]bj/
+bin/
+obj/
 out/
 
 # User-specific files
