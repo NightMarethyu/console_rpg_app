@@ -13,9 +13,9 @@
 **/obj/
 
 # Uncomment if you have tasks or test result files
-# *.log
-# *.vspscc
-# *.vssscc
+*.log
+*.vspscc
+*.vssscc
 
 # Visual Studio 2022 cache and environment files
 .vs/
