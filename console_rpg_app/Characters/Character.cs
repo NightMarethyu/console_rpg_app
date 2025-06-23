@@ -39,6 +39,11 @@
         this.Tags = tags;
     }
 
+    public void Attack(Character target)
+    {
+        target.TakeDamage(this.AttackValue);
+    }
+
     public void TakeDamage(int damage) 
     {
         this.CurrentHP -= damage;
