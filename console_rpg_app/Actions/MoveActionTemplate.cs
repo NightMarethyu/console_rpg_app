@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-public class MoveActionTemplate : IActionTemplate
+﻿public class MoveActionTemplate : IActionTemplate
 {
     private readonly Guid _destinationId;
 

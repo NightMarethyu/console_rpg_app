@@ -1,10 +1,12 @@
 ﻿public class CharacterManager
 {
     private Dictionary<Guid, Character> AllCharacters;
+    public Guid PlayerID { get; }
 
-    public CharacterManager()
+    public CharacterManager(WorldGenerationResult worldGen)
     {
-        AllCharacters = new Dictionary<Guid, Character>();
+        AllCharacters = worldGen.Characters;
+        PlayerID = worldGen.PlayerID;
     }
 
     public void RegisterCharacter(Character character)
