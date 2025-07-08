@@ -3,7 +3,7 @@ public class StaticWorldGenerator : IWorldGenerator
 {
     private record LocationBlueprint(string Key, string Name, string[] Tags);
     private record ConnectionBlueprint(string From, string To);
-    private record CharacterBlueprint(string Name, string LocationKey, string[] Tags, int hp, int armor, int attack, CharacterType Type);
+    private record CharacterBlueprint(string Name, string LocationKey, string[] Tags, int hp, int armor, int attack, CharacterType Type, EnemyAI? aI);
 
     List<LocationBlueprint> locationBlueprints = new List<LocationBlueprint>
     {
@@ -24,9 +24,9 @@ public class StaticWorldGenerator : IWorldGenerator
 
     List<CharacterBlueprint> characterBlueprints = new List<CharacterBlueprint>
     {
-        new("Player", "Campfire", new[] { CharacterTags.Player }, 100, 10, 5, CharacterType.Player),
-        new("Hermit", "Shack", new[] { CharacterTags.Villager }, 10, 0, 0, CharacterType.Villager),
-        new("Goblin", "Clearing", new[] { CharacterTags.Enemy }, 25, 2, 15, CharacterType.Enemy)
+        new("Player", "Campfire", new[] { CharacterTags.Player }, 100, 10, 5, CharacterType.Player, null),
+        new("Hermit", "Shack", new[] { CharacterTags.Villager }, 10, 0, 0, CharacterType.Villager, null),
+        new("Goblin", "Clearing", new[] { CharacterTags.Enemy }, 25, 2, 15, CharacterType.Enemy, EnemyAI.SimpleAggressive)
     };
 
     public WorldGenerationResult GenerateWorld()
@@ -80,6 +80,8 @@ public class StaticWorldGenerator : IWorldGenerator
             {
                 cb.AddTag(tag);
             }
+
+            if (character.aI != null) { cb.WithCombatAI((EnemyAI)character.aI); }
 
             var newCharacter = cf.CreateCharacter(cb, character.Type);
             characters.Add(newCharacter.Id, newCharacter);

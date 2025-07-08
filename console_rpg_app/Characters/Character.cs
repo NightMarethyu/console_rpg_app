@@ -11,6 +11,7 @@
     public int ArmorValue { get; protected set; }
     public int AttackValue { get; protected set; }
     public HashSet<string> Tags = new HashSet<string>();
+    public HashSet<ICombatAction> combatActions = new HashSet<ICombatAction>();
     //public Inventory Inventory { get; protected set; } // TODO implement Inventory class
 
     public Character()
@@ -23,6 +24,10 @@
         this.Dexterity = Dice.D(6, 3);
         this.Wisdom = Dice.D(6, 3);
         this.ArmorValue = 0;
+
+        this.combatActions.Add(new BasicAttackAction());
+        this.combatActions.Add(new BasicDefendAction());
+        this.combatActions.Add(new FleeAction());
     }
 
     public Character(Guid id, string name, int currentHP, int maxHP, bool isAlive, int strength, int dexterity, int wisdom, int armorValue, int attackValue, HashSet<string> tags)

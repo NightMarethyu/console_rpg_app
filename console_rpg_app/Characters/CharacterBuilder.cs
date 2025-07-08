@@ -11,6 +11,7 @@
     public int _armorValue = 0;
     public int _attackValue = 0;
     public HashSet<string> _tags = new HashSet<string>();
+    public EnemyAI EnemyAI = EnemyAI.None;
 
     public CharacterBuilder()
     {
@@ -96,6 +97,12 @@
     public CharacterBuilder AddTag(string tag)
     {
         _tags.Add(tag);
+        return this;
+    }
+
+    public CharacterBuilder WithCombatAI(EnemyAI aI)
+    {
+        EnemyAI = aI;
         return this;
     }
 }

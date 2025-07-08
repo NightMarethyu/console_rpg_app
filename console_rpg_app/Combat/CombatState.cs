@@ -1,0 +1,1 @@
+﻿public record CombatState(Character Self, List<Guid> AllyIds, List<Guid> EnemyIds);
