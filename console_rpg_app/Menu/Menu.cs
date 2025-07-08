@@ -18,8 +18,8 @@
         SelectedIndex = (SelectedIndex + 1) % Actions.Count;
     }
 
-    public void Select()
+    public SceneTransition? Select()
     {
-        Actions[SelectedIndex].Execute();
+        return Actions[SelectedIndex].Execute();
     }
 }

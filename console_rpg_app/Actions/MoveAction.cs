@@ -11,8 +11,9 @@
         _destinationId = destinationId;
     }
 
-    public void Execute()
+    public SceneTransition? Execute()
     {
         _mapManager.MovePlayerTo(_destinationId);
+        return null;
     }
 }

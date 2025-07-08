@@ -13,8 +13,12 @@
         _characterManager = characterManager;
     }
 
-    public void Execute()
+    public SceneTransition? Execute()
     {
-        _characterManager.GetCharacterById(_attacker).Attack(_characterManager.GetCharacterById(_target));
+        // var combatScene = new CombatScene(_characterManager, _attacker, _target);
+        // return combatScene;
+        // _characterManager.GetCharacterById(_attacker).Attack(_characterManager.GetCharacterById(_target));
+        Console.WriteLine("Combat would start now");
+        return null;
     }
 }
