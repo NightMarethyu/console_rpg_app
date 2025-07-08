@@ -11,7 +11,10 @@ public class Enemy : Character, IActionProvider
     {
         var templates = new List<IActionTemplate>();
 
-        templates.Add(new AttackActionTemplate(this.Id));
+        if (this.IsAlive)
+        {
+            templates.Add(new AttackActionTemplate(this.Id));
+        }
 
         return templates;
     }

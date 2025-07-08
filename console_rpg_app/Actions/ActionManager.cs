@@ -15,8 +15,18 @@
 
         var allTemplates = new List<IActionTemplate>();
         var currentLocation = _mapManager.GetCurrentLocation();
+
         allTemplates.AddRange(currentLocation.GetActionTemplates());
-        
+
+        foreach (var characterId in currentLocation.GetCharacterIDs())
+        {
+            var character = _characterManager.GetCharacterById(characterId);
+            if (character is IActionProvider actionProvider && character.Id != _characterManager.PlayerID)
+            {
+                allTemplates.AddRange(actionProvider.GetActionTemplates());
+            }
+        }
+
         var finalActions = new List<IGameAction>();
         foreach (var template in allTemplates)
         {

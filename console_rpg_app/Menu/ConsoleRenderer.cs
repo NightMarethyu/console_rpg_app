@@ -1,18 +1,12 @@
 ﻿public class ConsoleRenderer
 {
-    public void Render(string headerText, Menu menu)
+    public void Render(Menu menu, int topPosition)
     {
-        Console.Clear();
         Console.CursorVisible = false;
-
-        Console.SetCursorPosition(0, 0);
-        Console.WriteLine(headerText);
-
-        int menuTopPosition = Console.CursorTop;
 
         for (int i = 0; i < menu.Actions.Count; i++)
         {
-            Console.SetCursorPosition(0, menuTopPosition + i);
+            Console.SetCursorPosition(0, topPosition + i);
             bool isSelected = (i == menu.SelectedIndex);
 
             if (isSelected)
