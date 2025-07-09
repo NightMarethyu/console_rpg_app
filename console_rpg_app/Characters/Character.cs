@@ -4,14 +4,16 @@
     public string Name { get; protected set; }
     public int CurrentHP { get; protected set; }
     public int MaxHP { get; protected set; }
-    public bool IsAlive { get; protected set; } = true;
     public int Strength { get; protected set; }
     public int Dexterity { get; protected set; }
     public int Wisdom { get; protected set; }
     public int ArmorValue { get; protected set; }
     public int AttackValue { get; protected set; }
+    public HashSet<CharacterStatus> Statuses { get; private set; } = new HashSet<CharacterStatus>();
     public HashSet<string> Tags = new HashSet<string>();
     public HashSet<ICombatAction> combatActions = new HashSet<ICombatAction>();
+
+    public bool IsAlive => !this.Statuses.Contains(CharacterStatus.Dead);
     //public Inventory Inventory { get; protected set; } // TODO implement Inventory class
 
     public Character()
@@ -24,6 +26,8 @@
         this.Dexterity = Dice.D(6, 3);
         this.Wisdom = Dice.D(6, 3);
         this.ArmorValue = 0;
+
+        this.Statuses.Add(CharacterStatus.Alive);
 
         this.combatActions.Add(new BasicAttackAction());
         this.combatActions.Add(new BasicDefendAction());
@@ -72,7 +76,8 @@
 
     public virtual void Death()
     {
-        this.IsAlive = false;
+        this.Statuses.Clear();
+        this.Statuses.Add(CharacterStatus.Dead);
     }
 
 }
