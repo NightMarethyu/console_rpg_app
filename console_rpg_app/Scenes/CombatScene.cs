@@ -1,4 +1,6 @@
-﻿public class CombatScene : IScene
+﻿using System.ComponentModel.Design;
+
+public class CombatScene : IScene
 {
     private readonly CharacterManager _characterManager;
     private readonly Player _player;
@@ -29,7 +31,9 @@
 
     public void OnEnter()
     {
-        
+        Console.Clear();
+        Console.WriteLine("Entering Combat Scene");
+        Thread.Sleep(1000);
     }
 
     public void OnExit()
@@ -47,18 +51,18 @@
             //           Build some private helper functions so that this Run can be cleaner and more readable, They can be something like "private void PlayerTurn()" and "private void EnemyTurn()"
             foreach (var combatant in turnOrder)
             {
-                bool canAct = combatant.Statuses.Contains(CharacterStatus.Fleeing) ||
+                bool cannotAct = combatant.Statuses.Contains(CharacterStatus.Fleeing) ||
                     combatant.Statuses.Contains(CharacterStatus.Paralyzed) ||
                     combatant.Statuses.Contains(CharacterStatus.Dead);
 
-                if (!canAct) continue;
+                if (cannotAct) continue;
 
                 if (combatant.Id == _player.Id)
                 {
                     PlayerTurn();
-                } else
+                } else if (combatant is Enemy enemy)
                 {
-                    EnemyTurn(combatant);
+                    EnemyTurn(enemy);
                 }
             }
 
@@ -89,11 +93,128 @@
 
     private void PlayerTurn()
     {
+        PlayerTurnState currentState = PlayerTurnState.SelectingAction;
+        ICombatAction? selectedAction = null;
+        Character? selectedTarget = null;
 
+        while (currentState != PlayerTurnState.ActionConfirmed)
+        {
+            Console.Clear();
+            // TODO Render the current combat status here.
+
+            if (currentState == PlayerTurnState.SelectingAction)
+            {
+                Console.WriteLine("Choose your action:");
+                var actionMenuItems = _player.combatActions
+                    .Select(a => new MenuItem<ICombatAction>(a.Name, a))
+                    .ToList();
+
+                selectedAction = ShowMenuAndGetChoice(actionMenuItems);
+
+                if (selectedAction.TargetOfType == TargetType.Self)
+                {
+                    selectedTarget = _player;
+                    currentState = PlayerTurnState.ActionConfirmed;
+                }
+                else
+                {
+                    currentState = PlayerTurnState.SelectingTarget;
+                }
+            } else if (currentState == PlayerTurnState.SelectingTarget)
+            {
+                Console.WriteLine($"Choose a target for {selectedAction.Name}");
+                var potentialTargets = new List<Character>();
+
+                switch (selectedAction.TargetOfType)
+                {
+                    case TargetType.Enemy:
+                        potentialTargets.AddRange(_combatants.Where(c => c is Enemy && c.IsAlive));
+                        break;
+                    case TargetType.Ally:
+                        potentialTargets.AddRange(_combatants.Where(c => c is not Enemy && c.IsAlive && c.Id != _player.Id));
+                        break;
+                    case TargetType.Any:
+                        potentialTargets.AddRange(_combatants);
+                        break;
+                    case TargetType.SelfOrAlly:
+                        potentialTargets.AddRange(_combatants.Where(c => c is not Enemy && c.IsAlive));
+                        break;
+                    default:
+                        break;
+                }
+
+                var targetMenuItems = potentialTargets
+                    .Select(t => new MenuItem<Character>(t.Name, t))
+                    .ToList();
+
+                selectedTarget = ShowMenuAndGetChoice(targetMenuItems);
+                currentState = PlayerTurnState.ActionConfirmed;
+            }
+        }
+
+        Console.WriteLine($"Executing {selectedAction.Name} on {selectedTarget.Name}");
+        selectedAction.Execute(_player, selectedTarget);
     }
 
-    private void EnemyTurn(Character character)
+    private void EnemyTurn(Enemy character)
     {
-
+        List<Guid> playerAllies = new List<Guid>(_allies);
+        playerAllies.Add(_characterManager.PlayerID);
+        var (action, targetId) = character.AI.ChooseAction(new CombatState(character, _enemies, playerAllies));
+        if (action != null && targetId != Guid.Empty)
+        {
+            var target = _characterManager.GetCharacterById(targetId);
+            if (target != null)
+            {
+                action.Execute(character, target);
+            }
+        } else
+        {
+            Console.WriteLine($"{character.Name} doesn't know what to do!");
+        }
     }
+
+    private T ShowMenuAndGetChoice<T>(List<MenuItem<T>> items)
+    {
+        int selectedIndex = 0;
+        ConsoleKeyInfo keyInfo;
+
+        do
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                Console.SetCursorPosition(0, Console.CursorTop);
+                bool isSelected = i == selectedIndex;
+
+                if (isSelected)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.WriteLine($"> {items[i].Name}");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.WriteLine($"  {items[i].Name}");
+                }
+            }
+
+            keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.UpArrow)
+            {
+                selectedIndex = (selectedIndex == 0) ? items.Count - 1 : selectedIndex - 1;
+            }
+            else if (keyInfo.Key == ConsoleKey.DownArrow)
+            {
+                selectedIndex = (selectedIndex + 1) % items.Count;
+            }
+
+            Console.SetCursorPosition(0, Console.CursorTop - items.Count);
+        } while (keyInfo.Key != ConsoleKey.Enter);
+
+        return items[selectedIndex].Value;
+    }
+
+    private record MenuItem<T>(string Name, T Value);
+    private enum PlayerTurnState { SelectingAction, SelectingTarget, ActionConfirmed }
 }

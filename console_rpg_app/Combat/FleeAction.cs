@@ -5,6 +5,7 @@
 
     public void Execute(Character source, Character target)
     {
+        source.Statuses.Add(CharacterStatus.Fleeing);
         Console.WriteLine("Run away");
     }
 }

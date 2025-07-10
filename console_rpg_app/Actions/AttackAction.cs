@@ -34,7 +34,7 @@
             }
         }
 
-        var combatState = new CombatState(_characterManager.GetCharacterById(_attacker), allyIds, enemyIds);
+        var combatState = new CombatState(_characterManager.GetCharacterById(_player), allyIds, enemyIds);
         var combatScene = new CombatScene(_characterManager, combatState);
 
         return new SceneTransition(SceneAction.PUSH, combatScene);

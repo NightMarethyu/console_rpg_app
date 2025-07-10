@@ -34,7 +34,7 @@
         this.combatActions.Add(new FleeAction());
     }
 
-    public Character(Guid id, string name, int currentHP, int maxHP, bool isAlive, int strength, int dexterity, int wisdom, int armorValue, int attackValue, HashSet<string> tags)
+    public Character(Guid id, string name, int currentHP, int maxHP, bool isAlive, int strength, int dexterity, int wisdom, int armorValue, int attackValue, HashSet<string> tags) : this()
     {
         this.Id = id;
         this.Name = name;
@@ -58,7 +58,7 @@
         this.CurrentHP -= damage;
         Console.WriteLine($"{Name} was attacked for {damage} points of damage");
         Console.WriteLine($"{Name} has {CurrentHP} HP remaining");
-        Thread.Sleep(500);
+        Thread.Sleep(1000);
         if (this.CurrentHP <= 0)
         {
             this.Death();
