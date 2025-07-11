@@ -56,11 +56,9 @@
     public void TakeDamage(int damage) 
     {
         this.CurrentHP -= damage;
-        Console.WriteLine($"{Name} was attacked for {damage} points of damage");
-        Console.WriteLine($"{Name} has {CurrentHP} HP remaining");
-        Thread.Sleep(1000);
         if (this.CurrentHP <= 0)
         {
+            this.CurrentHP = 0;
             this.Death();
         }
     }

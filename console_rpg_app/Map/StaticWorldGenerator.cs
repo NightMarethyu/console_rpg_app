@@ -24,9 +24,9 @@ public class StaticWorldGenerator : IWorldGenerator
 
     List<CharacterBlueprint> characterBlueprints = new List<CharacterBlueprint>
     {
-        new("Player", "Campfire", new[] { CharacterTags.Player }, 100, 10, 5, CharacterType.Player, null),
+        new("Player", "Campfire", new[] { CharacterTags.Player }, 100, 10, 10, CharacterType.Player, null),
         new("Hermit", "Shack", new[] { CharacterTags.Villager }, 10, 0, 0, CharacterType.Villager, null),
-        new("Goblin", "Clearing", new[] { CharacterTags.Enemy }, 25, 2, 15, CharacterType.Enemy, EnemyAI.SimpleAggressive)
+        new("Goblin", "Clearing", new[] { CharacterTags.Enemy }, 25, 2, 5, CharacterType.Enemy, EnemyAI.SimpleAggressive)
     };
 
     public WorldGenerationResult GenerateWorld()
