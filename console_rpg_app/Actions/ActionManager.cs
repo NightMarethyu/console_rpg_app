@@ -27,6 +27,8 @@
             }
         }
 
+        allTemplates.AddRange(((Player)_characterManager.GetCharacterById(_characterManager.PlayerID)).GetActionTemplates());
+
         var finalActions = new List<IGameAction>();
         foreach (var template in allTemplates)
         {
