@@ -7,6 +7,11 @@ public class Player : Character, IActionProvider
         this.Tags.Add(CharacterTags.Player);
     }
 
+    public Player(Guid id) : base()
+    {
+        this.Id = id;
+    }
+
     public void Attack(Character en)
     {
         en.TakeDamage(this.AttackValue);

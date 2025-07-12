@@ -1,4 +1,5 @@
 ﻿using NSubstitute;
+using System.Runtime.InteropServices;
 
 namespace console_rpg_app.Tests
 {
@@ -7,16 +8,20 @@ namespace console_rpg_app.Tests
         [Fact]
         public void Constructor_WhenGivenAWorldGenerator_SetsLocationsAndStartingID()
         {
-            var fakeStartingId = Guid.NewGuid();
-            var fakeLocation = new Location("Fake Town", id: fakeStartingId);
-            var fakeMap = new Dictionary<Guid, Location> { {  fakeStartingId, fakeLocation } };
-            var fakeResult = new WorldGenerationResult(fakeMap, fakeStartingId);
+            // Create fake map
+            Guid fakeStartingId = Guid.NewGuid();
+            Location fakeLocation = new("Fake Town", id: fakeStartingId);
+            Dictionary<Guid, Location> fakeMap = new() { {  fakeStartingId, fakeLocation } };
 
-            var mockGenerator = Substitute.For<IWorldGenerator>();
+            // Create fake Players
+            Guid fakePlayerId = Guid.NewGuid();
+            Player character = new(fakePlayerId);
+            Dictionary<Guid, Character> fakeCharacters = new() { { fakePlayerId, character } };
 
-            mockGenerator.GenerateWorld().Returns(fakeResult);
+            // Build world
+            WorldGenerationResult fakeResult = new(fakeMap, fakeStartingId, fakeCharacters, fakePlayerId);
 
-            var mapManager = new MapManager(mockGenerator);
+            MapManager mapManager = new MapManager(fakeResult);
 
             Assert.Single(mapManager.Locations);
             Assert.Equal(fakeStartingId, mapManager.CurrentLocation);
