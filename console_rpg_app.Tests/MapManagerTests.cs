@@ -11,17 +11,10 @@ namespace console_rpg_app.Tests
             // Create fake map
             Guid fakeStartingId = Guid.NewGuid();
             Location fakeLocation = new("Fake Town", id: fakeStartingId);
-            Dictionary<Guid, Location> fakeMap = new() { {  fakeStartingId, fakeLocation } };
 
-            // Create fake Players
-            Guid fakePlayerId = Guid.NewGuid();
-            Player character = new(fakePlayerId);
-            Dictionary<Guid, Character> fakeCharacters = new() { { fakePlayerId, character } };
-
-            // Build world
-            WorldGenerationResult fakeResult = new(fakeMap, fakeStartingId, fakeCharacters, fakePlayerId);
-
-            MapManager mapManager = new MapManager(fakeResult);
+            var (mapManager, _) = new TestWorldBuilder()
+                                      .WithStartingLocation(fakeLocation)
+                                      .Build();
 
             Assert.Single(mapManager.Locations);
             Assert.Equal(fakeStartingId, mapManager.CurrentLocation);

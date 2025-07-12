@@ -46,6 +46,11 @@
         this.ArmorValue = armorValue;
         this.AttackValue = attackValue;
         this.Tags = tags;
+
+        if (!isAlive)
+        {
+            this.Death();
+        }
     }
 
     public void Attack(Character target)
