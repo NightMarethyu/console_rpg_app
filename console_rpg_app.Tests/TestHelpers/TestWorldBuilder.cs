@@ -39,6 +39,13 @@
         return this;
     }
 
+    public TestWorldBuilder WithSpecificExit(Location location)
+    {
+        _locations.Add(location.Id, location);
+        _locations[_startingLocationId].AddExit(location.Id);
+        return this;
+    }
+
     public TestWorldBuilder WithEnemies(int count, bool isAlive = true)
     {
         var startingLocation = _locations[_startingLocationId];
@@ -57,6 +64,21 @@
             _characters.Add(enemy.Id, enemy);
             startingLocation.AddCharacter(enemy);
             builder.Reset();
+        }
+
+        return this;
+    }
+
+    public TestWorldBuilder WithSpecificCharacter(Character character, Guid locationId)
+    {
+        if (!_characters.ContainsKey(character.Id))
+        {
+            _characters.Add(character.Id, character);
+        }
+
+        if (!_locations[locationId].GetCharacterIDs().Contains(character.Id))
+        {
+            _locations[locationId].AddCharacter(character);
         }
 
         return this;
