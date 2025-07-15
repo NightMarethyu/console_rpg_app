@@ -3,10 +3,13 @@ var mapManager = new MapManager(worldGenerator);
 var characterManager = new CharacterManager(worldGenerator);
 var actionManager = new ActionManager(mapManager, characterManager);
 var sceneManager = new SceneManager();
-var renderer = new ConsoleRenderer();
+
+var userInput = new ConsoleUserInput();
+var viewRenderer = new ConsoleViewRenderer();
+var menuService = new MenuService(viewRenderer, userInput);
 
 // create initial Scene
-var baseScene = new ExplorationScene(mapManager, actionManager, renderer);
+var baseScene = new ExplorationScene(mapManager, actionManager, menuService);
 sceneManager.PushScene(baseScene);
 
 Thread.Sleep(1000);

@@ -2,13 +2,13 @@
 {
     private readonly MapManager _mapManager;
     private readonly ActionManager _actionManager;
-    private readonly ConsoleRenderer _consoleRenderer;
+    private readonly MenuService _menuService;
 
-    public ExplorationScene(MapManager mapManager, ActionManager actionManager, ConsoleRenderer consoleRenderer)
+    public ExplorationScene(MapManager mapManager, ActionManager actionManager, MenuService menuService)
     {
         _mapManager = mapManager;
         _actionManager = actionManager;
-        _consoleRenderer = consoleRenderer;
+        _menuService = menuService;
     }
 
     public SceneTransition Run()
@@ -16,50 +16,21 @@
         // This is the scene's own game loop.
         while (true)
         {
-            Console.Clear();
-
             var currentLocation = _mapManager.GetCurrentLocation();
             var availableActions = _actionManager.GetCurrentActions();
 
-            if (!availableActions.Any())
-            {
-                Console.WriteLine("You have no available actions. The game is over.");
-                // We must return to the SceneManager to exit the game.
-                return new SceneTransition(SceneAction.EXIT_GAME, null);
-            }
+            var viewComponents = new ViewBuilder()
+                .AddText($"--- {currentLocation.Name} ---")
+                .AddText("\nWhat do you want to do?")
+                .Build();
 
-            var menu = new Menu(availableActions);
+            var menuItems = availableActions
+                .Select(action => new MenuItem<IGameAction>(action.Description, action))
+                .ToList();
 
-            Console.WriteLine($"--- {currentLocation.Name} ---\n");
+            IGameAction chosenAction = _menuService.DisplayViewAndGetChoice(viewComponents, menuItems);
 
-            int menuTopPosition = Console.CursorTop;
-            _consoleRenderer.Render(menu, menuTopPosition);
-
-            ConsoleKeyInfo keyInfo;
-            do
-            {
-                keyInfo = Console.ReadKey(true); // Changed to 'true' to hide the key press
-
-                if (keyInfo.Key == ConsoleKey.UpArrow) menu.MoveUp();
-                else if (keyInfo.Key == ConsoleKey.DownArrow) menu.MoveDown();
-
-                _consoleRenderer.Render(menu, menuTopPosition);
-            } while (keyInfo.Key != ConsoleKey.Enter);
-
-            // Execute the selected action and capture the potential transition.
-            var transition = menu.Select();
-
-            // If the action returned a transition, exit this scene's loop
-            // and return control to the SceneManager.
-            if (transition != null && transition.action != SceneAction.NONE)
-            {
-                return transition;
-            }
-
-            // If the action did not return a transition (e.g., MoveAction),
-            // the loop continues for the next turn in this scene.
-            Console.ResetColor();
-            Console.SetCursorPosition(0, menuTopPosition + menu.Actions.Count + 1);
+            return chosenAction.Execute();
         }
     }
 

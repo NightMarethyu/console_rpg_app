@@ -1,0 +1,1 @@
+﻿public record MenuItem<T>(string DisplayName, T Value);

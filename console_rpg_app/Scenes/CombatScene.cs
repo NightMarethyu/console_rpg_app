@@ -9,7 +9,6 @@ public class CombatScene : IScene
 
     private List<Character> _combatants = new List<Character>();
 
-    private record MenuItem<T>(string Name, T Value);
     private enum PlayerTurnState { SelectingAction, SelectingTarget, ActionConfirmed }
 
     public CombatScene(CharacterManager characterManager, CombatState combatState)
@@ -259,12 +258,12 @@ public class CombatScene : IScene
                     Console.BackgroundColor = ConsoleColor.White;
                     // Pad the string to ensure the highlight covers the full width,
                     // clearing any text from a previous, longer menu item.
-                    Console.Write($"> {items[i].Name}");
+                    Console.Write($"> {items[i].DisplayName}");
                     Console.ResetColor();
                 }
                 else
                 {
-                    Console.Write($"  {items[i].Name}");
+                    Console.Write($"  {items[i].DisplayName}");
                 }
             }
 
