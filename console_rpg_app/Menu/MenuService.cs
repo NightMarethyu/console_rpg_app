@@ -13,10 +13,12 @@
     {
         _renderer.Clear();
         var menuModel = new MenuModel<T>(items);
+        int cursorTopPosition = _renderer.RenderComponents(components);
 
         while (true)
         {
-            _renderer.Render(components, menuModel);
+            //_renderer.Render(components, menuModel);
+            _renderer.RenderMenu(menuModel, cursorTopPosition);
             var key = _userInput.GetKey();
 
             switch (key)
