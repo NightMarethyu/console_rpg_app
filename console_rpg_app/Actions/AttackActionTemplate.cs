@@ -9,6 +9,6 @@
 
     public IGameAction ToAction(GameContext context)
     {
-        return new AttackAction(context.CharacterManager.PlayerID, _targetId, context.CharacterManager, context.MapManager);
+        return new AttackAction(context.CharacterManager.PlayerID, _targetId, context.CharacterManager, context.MapManager, context.MenuService);
     }
 }

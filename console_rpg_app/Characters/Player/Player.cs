@@ -12,7 +12,7 @@ public class Player : Character, IActionProvider
         this.Id = id;
     }
 
-    public void Attack(Character en)
+    public new void Attack(Character en)
     {
         en.TakeDamage(this.AttackValue);
     }
