@@ -2,16 +2,18 @@
 {
     private readonly MapManager _mapManager;
     private readonly CharacterManager _characterManager;
+    private readonly MenuService _menuService;
 
-    public ActionManager(MapManager mapManager, CharacterManager characterManager)
+    public ActionManager(MapManager mapManager, CharacterManager characterManager, MenuService menuService)
     {
         _mapManager = mapManager;
         _characterManager = characterManager;
+        _menuService = menuService;
     }
 
     public List<IGameAction> GetCurrentActions()
     {
-        var context = new GameContext(_mapManager, _characterManager);
+        var context = new GameContext(_mapManager, _characterManager, _menuService);
 
         var allTemplates = new List<IActionTemplate>();
         var currentLocation = _mapManager.GetCurrentLocation();

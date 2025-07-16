@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.Design;
+using static GameStrings;
 
 public class CombatScene : IScene
 {
     private readonly CharacterManager _characterManager;
+    private readonly MenuService _menuService;
     private readonly Player _player;
     private readonly List<Guid> _enemies;
     private readonly List<Guid> _allies;
@@ -11,12 +13,13 @@ public class CombatScene : IScene
 
     private enum PlayerTurnState { SelectingAction, SelectingTarget, ActionConfirmed }
 
-    public CombatScene(CharacterManager characterManager, CombatState combatState)
+    public CombatScene(CharacterManager characterManager, CombatState combatState, MenuService menuService)
     {
         _characterManager = characterManager;
         _player = (Player)combatState.Self;
         _enemies = combatState.EnemyIds;
         _allies = combatState.AllyIds;
+        _menuService = menuService;
 
         _combatants.Add(_player);
 
@@ -119,15 +122,26 @@ public class CombatScene : IScene
 
     private void PlayerTurn()
     {
-        RenderCombatStatus();
-        Console.WriteLine(GameStrings.CombatStrings.PlayerTurnPrompt);
+        var viewComponents = new ViewBuilder()
+            .AddText(GameStrings.CombatStrings.Title);
+
+        foreach (var combatant in _combatants.Where(cb => cb.IsAlive))
+        {
+
+            viewComponents.AddText(string.Format(GameStrings.CombatStrings.CharacterStatus, combatant.Name, combatant.CurrentHP, combatant.MaxHP));
+            /*var effectsString = string.Format($"  {GameStrings.CombatStrings.CharacterEffects}\n", GameStrings.CombatStrings.NoEffects);
+            viewComponents.AddText(effectsString);*/ // I need to find a better way to display the effects the characters have on them
+        }
+
+        //RenderCombatStatus();
+        viewComponents.AddText(GameStrings.CombatStrings.PlayerTurnPrompt);
 
         // 1. Select Action
         var actionMenuItems = _player.combatActions
             .Select(action => new MenuItem<ICombatAction>(action.GetDescription(_player), action))
             .ToList();
 
-        var selectedAction = ShowMenuAndGetChoice(actionMenuItems);
+        var selectedAction = _menuService.DisplayViewAndGetChoice(viewComponents.Build(), actionMenuItems);
 
         // 2. Select Target (if required)
         Character selectedTarget = null;

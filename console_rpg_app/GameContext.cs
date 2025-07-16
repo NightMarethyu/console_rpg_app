@@ -1,1 +1,1 @@
-﻿public record GameContext(MapManager MapManager, CharacterManager CharacterManager);
+﻿public record GameContext(MapManager MapManager, CharacterManager CharacterManager, MenuService MenuService);

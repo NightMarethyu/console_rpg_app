@@ -1,12 +1,13 @@
 ﻿var worldGenerator = new StaticWorldGenerator().GenerateWorld();
 var mapManager = new MapManager(worldGenerator);
 var characterManager = new CharacterManager(worldGenerator);
-var actionManager = new ActionManager(mapManager, characterManager);
-var sceneManager = new SceneManager();
 
 var userInput = new ConsoleUserInput();
 var viewRenderer = new ConsoleViewRenderer();
 var menuService = new MenuService(viewRenderer, userInput);
+
+var actionManager = new ActionManager(mapManager, characterManager, menuService);
+var sceneManager = new SceneManager();
 
 // create initial Scene
 var baseScene = new ExplorationScene(mapManager, actionManager, menuService);
