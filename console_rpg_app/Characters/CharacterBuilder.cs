@@ -13,9 +13,7 @@
     public HashSet<string> _tags = new HashSet<string>();
     public EnemyAI EnemyAI = EnemyAI.None;
 
-    public CharacterBuilder()
-    {
-    }
+    public CharacterBuilder() { }
 
     public CharacterBuilder Reset()
     {

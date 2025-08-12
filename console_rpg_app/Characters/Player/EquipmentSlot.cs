@@ -1,4 +1,4 @@
-﻿public enum EquipmentSlots
+﻿public enum EquipmentSlot
 {
     Head,
     Chest,

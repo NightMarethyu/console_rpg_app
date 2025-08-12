@@ -9,12 +9,13 @@
     public int Wisdom { get; protected set; }
     public int ArmorValue { get; protected set; }
     public int AttackValue { get; protected set; }
-    public HashSet<CharacterStatus> Statuses { get; private set; } = new HashSet<CharacterStatus>();
-    public HashSet<string> Tags = new HashSet<string>();
-    public HashSet<ICombatAction> combatActions = new HashSet<ICombatAction>();
+    public HashSet<CharacterStatus> Statuses { get; private set; } = new();
+    public HashSet<string> Tags = new();
+    public HashSet<ICombatAction> combatActions = new();
+
+    public Inventory Inventory { get; protected set; } = new();
 
     public bool IsAlive => !this.Statuses.Contains(CharacterStatus.Dead);
-    //public Inventory Inventory { get; protected set; } // TODO implement Inventory class
 
     public Character()
     {
